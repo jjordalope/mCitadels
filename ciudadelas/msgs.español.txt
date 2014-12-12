@@ -1,0 +1,256 @@
+1 No pudo iniciarse el servidor. El puerto especificado está ya en uso.
+2 Host
+3 Cliente
+4 Puerto
+5 Nombre Partida
+6 Nombre
+7 Apagar
+8 Jugar
+9 Servidor
+10 Puerto Servidor
+11 Conectando con servidor...
+12 Crear Partida
+13 Empezar partida
+14 jugadores
+15 El Torreón no puede ser destruido ni cambiado
+16 No tienes dinero suficiente para destruir ese distrito
+17 No puedes destruir distritos del jugador que tiene al Obispo
+18 No puedes destruir distritos del jugador que tiene $2 construidos
+19 Necesitas 2 monedas de oro para utilizar la Fábrica
+20 Cambiar cartas
+21 Puedes cambiar todas tus cartas con otro jugador o bien las que quieras con el Mazo. Para cambiar con un jugador señálale en la ventana Mesa. Para cambiar con el Mazo selecciona las cartas a cambiar y dale a OK.
+22 Laboratorio
+23 Pincha sobre la carta de distrito que deseas descartar para obtener por ella 1 moneda de oro.
+24 No se pudo conectar con el host
+25 Conectado a %cciudadelas.f.host en %cciudadelas.f.puerto
+26 Cerrada conexión con el server
+27 No tienes oro suficiente para construir eso
+28 No puedes construir dos distritos iguales
+29 No puedes construir más de $2 distritos
+30 No puedes construir más distritos este turno
+31 No puedes construir fuera de tu turno
+32 Coger oro
+33 Coger cartas
+34 Asesinar
+35 Robar
+36 Cambiar cartas
+37 Cartas Extra
+38 Destruir distrito
+39 Cobrar Distritos
+40 Fábrica
+41 Acabar turno
+42 Empieza la partida
+43 Conecta
+44 $2 cobra $3 monedas de oro por sus distritos
+45 Descartes
+46 Sólo puedes quedarte con una de las cartas robadas. Selecciona las cartas sobrantes para descartarlas.
+47 coge 2 monedas de oro.
+48 $2 coge $3 cartas %m
+49 $2 se descarta de $3 cartas
+50 Descartado el
+51 Descartada una carta bocabajo
+52 Desconecta $2
+53 $2 está eligiendo personaje...
+54 Nuevo turno. $2 será el primero en elegir
+55 $2 construye
+56 $2 asesina al
+57 $2 le destruye a $4 su distrito " $+ %distrito $+ "
+58 Cementerio
+59 $2 paga 1 moneda de oro y recupera con el Cementerio la carta " %carta " destruida por el Condotiero
+60 $2 roba al %personaje
+61 $2 cambia sus cartas con $3
+62 Te toca jugar como %personaje
+63 El servidor central fue incapaz de conectarse a la partida. Comprueba que el puerto no está siendo filtrado (¿firewall?)
+64 Partidas
+65 Turno de: %personaje ( $3 )
+66 El %personaje está descartado
+67 El %personaje está muerto
+68 $2 usa el Laboratorio descartándose de una carta y ganando una moneda de oro por ello
+69 La partida terminó, el ganador es $2 con $3 puntos
+70 Servidor escuchando en puerto %sciudadelas.f.puerto a la espera de conexiones...
+71 Cliente conectado desde
+72 Desconecta
+73 Arquitecto
+74 Necesitas 2 monedas de oro para poder usar la Fábrica
+75 No puedes usar la Fábrica si no la tienes construida
+76 No puedes usar el Laboratorio si no lo tienes construido
+77 Sólo puedes usar el Laboratorio con cartas que tengas en la Mano
+78 No puedes destruir distritos si no eres el Condotiero
+79 Necesitas al menos 1 moneda de oro para usar el Cementerio
+80 No puedes usar el Cementerio si no lo tienes construido
+81 Cambio de mano con mazo del Mago
+82 No tienes en tu mano la carta que pretendes construir
+83 Tienda
+84 Mercado
+85 Taberna
+86 Puerto
+87 Almacenes
+88 Ayuntamiento
+89 Prisión
+90 Cuartel
+91 Atalaya
+92 Fortaleza
+93 Templo
+94 Iglesia
+95 Monasterio
+96 Señorío
+97 Catedral
+98 Castillo
+99 Palacio
+100 Patio_de_los_Milagros
+101 Torreón
+102 Tesoro_Imperial
+103 Cantera
+104 Biblioteca
+105 Gran_Muralla
+106 Escuela_de_Magia
+107 Universidad
+108 Observatorio
+109 Fuente_de_los_Deseos
+110 Puerta_Dragón
+111 Asesino
+112 Ladrón
+113 Mago
+114 Rey
+115 Obispo
+116 Mercader
+117 Condotiero
+118 El Asesino puede asesinar a un personaje de su elección. El personaje muerto perderá su turno completo y no puede ser víctima del Ladrón.
+119 El Ladrón puede robar a un Personaje de su elección. No puede robar al Asesino ni al Personaje asesinado. El robo tendrá lugar al principio del turno del Personaje robado.
+120 El Mago puede escoger entre cambiar la totalidad de sus cartas con las cartas de otro jugador (no Personaje) de su elección o bien descartar cualquier número de cartas de su mano y robar un número de cartas igual.
+121 El Rey será el primero en escoger Personaje la siguiente ronda. Cada Distrito noble (amarillo) que poseas te reporta una moneda de oro.
+122 El Obispo no puede ser atacado por el Condotiero. Cada distrito eclesiástico (azul) que poseas te reporta una moneda de oro.
+123 El Mercader recibe una moneda de oro adicional al principio de su turno. Cada Distrito comercial (verde) que poseas te reporta una moneda de oro.
+124 El Arquitecto recibe dos cartas adicionales. Puedes construir hasta tres Distritos este turno.
+125 El Condotiero puede destruir un Distrito de su elección pagando a la banca su coste de construcción menos uno. Cada Distrito militar (rojo) que poseas te reporta una moneda de oro.
+126 Cuando se cuenten los puntos del final de la partida, el Patio de los milagros se considera un distrito de un color a tu elección. No podrás usar esta capacidad si construiste el Patio de los milagros en tu último turno de la partida.
+127 El Torreón no puede ser destruido por el Condotiero.
+128 El Tesoro imperial tiene un coste de 4 monedas de oro para ser construido, pero te reporta tantos puntos como monedas de oro tengas en tu posesión al final de la partida.
+129 Puedes construir distritos con el mismo nombre qu eotros que ya tengas en juego. No perderás las construcciones realizadas de esta forma si la Cantera es destruida.
+130 Si escoges robar dos cartas al principio de tu turno, te quedas con las dos cartas que cojas.
+131 El precio que debe pagar el Condotiero para destruir tus distritos se incrementa en 1.
+132 En lo que respecta a los ingresos, la Escuela de magia es considerada un distrito de un color a tu elección. De esta forma te reporta ganancias ya seas Rey, Obispo, Mercader o Condotiero.
+133 La construcción de esta maravilla -nunca nadie comprendió completamente para que puede servir una Universidad- cuesta seis monedas de oro pero proporciona ocho puntos al final del juego.
+134 Cuando el Condotiero destruya un distrito, puedes pagar una moneda de oro para cogerlo y ponerlo en tu mano. No puedes hacer esto si eres el Condotiero.
+135 Una vez por turno, puedes pagar dos monedas de oro para robar tres cartas.
+136 Si decides robar dos cartas al principio de tu turno, coges en su lugar tres, te quedas con una de ellas y descartas las otras dos.
+137 Una vez por turno, puedes descartar una carta de Distrito de tu mano y recibir una moneda de oro a cambio.
+138 Al final de la partida, la Fuente de los deseos te da los 5 puntos de su coste (como cualquier distrito) más un punto extra por cada distrito de color violeta que poseas aparte de la propia Fuente.
+139 La construcción de esta maravilla -ningún dragón ha sido visto en el reino desde hace cientos de años- cuesta seis monedas de oro pero proporciona ocho puntos al final del juego.
+140 Bruja
+141 La Bruja puede embrujar a un Personaje de su elección. Así, empieza su turno robando oro o cogiendo cartas y luego, en el turno del personaje embrujado, juega las habilidades especiales de éste y construye -si puede- distrito.
+142 Recaudador
+143 Cada jugador que construya uno o más distritos, si puede, le pagará al Recaudador una moneda de oro.
+144 Hechicero
+145 El Hechicero puede escoger una carta de la mano de otro jugador y construirla aunque ya haya construido un Distrito ese turno.
+146 Emperador
+147 El Emperador da la Corona a otro jugador, que le paga una moneda de oro o una carta (a elección de ese jugador). Cada distrito noble (amarillo) que poseas te reporta una moneda de oro.
+148 Abad
+149 El jugador más rico le tiene que dar una moneda de oro al Abad. Cada distrito eclesiástico (azul) que poseas te reporta una moneda de oro.
+150 Alquimista
+151 El Alquimista recupera todo lo que ha gastado para construir un Distrito.
+152 Navegante
+153 El Navegante coge cuatro monedas de oro o roba cuatro cartas. No puede construir ningún Distrito.
+154 Diplomático
+155 El Diplomático puede cambiar uno de sus Distritos por otro de su adversario. Cada Distrito militar (rojo) que poseas te reporta una moneda de oro.
+156 Reina
+157 La Reina recibe tres monedas de oro si está al lado del Rey.
+158 Artista
+159 El Artista puede ornamentar uno o dos Distritos de tu ciudad aplicando sobre ellos una moneda de oro. Un distrito ornamentado le cuesta al Condotiero una moneda de oro más a la hora de ser destruido.
+160 Personajes
+161 Elige qué personajes estarán disponibles durante la partida
+162 9 Personajes
+163 ¿Seguro que quieres descartar eso?
+164 El Navegante no puede construir distritos
+165 Coger 4 Cartas
+166 Coger 4 Monedas
+167 $2 cobra 4 monedas de oro como Navegante
+168 $2 paga una moneda al Recaudador ( $3 ) por haber construido
+169 Elige qué carta quieres robarle a $2
+170 $2 (Hechicero) le quita una carta a $3
+171 $2 paga a $3 (Abad) 1 moneda de oro por ser el jugador más rico
+172 Cambiar Distrito
+173 El cambio debe ser entre un distrito tuyo y uno de otro jugador
+174 No puedes intercambiar distritos bajo la protección del Obispo
+175 No tienes oro suficiente para hacer ese cambio
+176 $2 (Diplomático) cambia un distrito con $3
+177 No se pueden intercambiar distritos cuando alguno de los implicados ya ha construido $2
+178 Ningún jugador puede quedarse con dos distritos del mismo nombre como resultado del cambio del diplomático
+179 Dar Corona
+180 $2 (Emperador) da la Corona a $3
+181 Debes pagar al emperador (por haberte dado la Corona) una moneda de oro o una carta de tu elección
+182 Pagar oro
+183 $2 no tiene oro o cartas con que pagar a $3 (Emperador) por la Corona
+184 $2 paga una moneda de oro a $3 (Emperador) por la Corona
+185 $2 da una carta a $3 (Emperador) por la Corona
+186 No puedes darte la corona a ti mismo
+187 No puedes dar la corona a quien ya la tiene
+188 $2 (Reina) cobra 3 monedas de oro al estar al lado de la Corona
+189 Ornamentar
+190 No tienes dinero
+191 No puedes ornamentar distritos que no te pertenecen
+192 No puedes ornamentar más de una vez un mismo distrito
+193 $2 (Artista) ornamenta su distrito: " %distrito "
+194 Embrujar
+195 $2 embruja al %personaje
+196 El %personaje fue embrujado de modo que el resto de su turno lo jugará la Bruja ( $3 )
+197 La Bruja construye en el turno del personaje embrujado
+198 No puedes construir estando embrujado
+199 Elige un nombre de menos de 8 letras
+200 Nombre no permitido. Elige otro distinto
+201 Descartados
+202 El %personaje pertenece a un jugador desconectado
+203 Desconectado
+204 Mesa
+205 Mano
+206 Se perdió la conexión con el servidor central
+207 Puntos
+208 Cartas
+209 Oro
+210 Opciones
+211 Conectar con servidor central
+212 Idioma
+213 No fue posible conectar con el servidor central
+214 Hay una nueva versión del juego. No puedes conectar al servidor central con versiones anteriores.
+215 En las partidas entre 2 jugadores, se elige un personaje y se descarta otro cada vez. Elige personaje a descartar.
+216 Elige con qué personaje vas a jugar esta ronda. Al pasar sobre cada personaje se te mostrará una descripción del mismo.
+217 Elige a qué personaje vas a asesinar. El personaje asesinado pierde su turno, pero no puede ser robado por el ladrón.
+218 Elige a qué personaje vas a robar. Cuando llegue el turno del personaje éste te dará su oro. No puedes robar al personaje asesinado o embrujado.
+219 Elige a qué personaje vas a embrujar. Cuando llegue su turno, podrá coger oro o robar 2 cartas y después tú jugarás el resto de su turno y podrás usar sus habilidades especiales.
+220 Servidor NAT
+221 Tienes tu monitor configurado con una resolución inferior a 1024x768 que es la configuración mínima para poder jugar.
+222 Casino
+223 Hospital
+224 Albergue
+225 Faro
+226 Polvorín
+227 Factoría
+228 Museo
+229 Campanario
+230 Sala_del_Trono
+231 Parque
+232 Al final de la partida, obtienes un punto de victoria extra por cada carta que tengas en tu mano.
+233 Si eres asesinado, aún puedes coger dos monedas de oro o robar dos cartas (y descartar una) durante tu turno. Sigues sin poder hacer nada más.
+234 Si no tienes oro al final de tu turno, ganas 1 moneda.
+235 Al construir este distrito, busca en el mazo la carta que desees y quédatela en tu mano. El mazo es barajado después.
+236 Durante tu turno, puedes optar por destruir el Polvorín junto con un distrito de uno de los otros jugadores.
+237 El coste de construcción de cualquier maravilla se ve reducido en 1 para ti. Esto no afecta al precio que debe pagar el Condotiero para destruir distritos.
+238 Durante tu turno, puedes colocar una carta de tu mano bajo el museo. Al final de la partida, cada una de estas cartas te dará 1 punto de victoria extra.
+239 Al construir este distrito, puedes decidir que la partida finalice cuando alguien construya 7 distritos en lugar de 8. Si el condotiero destruye el campanario, las condiciones de victoria vuelven a la normalidad.
+240 Cada vez que la corona se mueva de un jugador a otro recibirás 1 moneda de oro.
+241 Si no tienes cartas en tu mano al final del turno, roba dos cartas del mazo.
+242 Sala_de_Baile
+243 Cuando tengas la corona, todos los jugadores deben decir -gracias, excelencia- antes de realizar ninguna otra acción en su turno o lo perderán.
+244 gracias, excelencia
+245 $2 cobra 1 moneda por tener el Albergue y carecer de oro
+246 $2 gana 1 moneda de oro al haberse movido la corona y tener construida la Sala del trono
+247 El %personaje ( $3 ) está muerto pero tiene construido el Hospital, por lo que puede jugar parte de su turno
+248 El Hospital te permite coger oro o cartas, pero no construir o usar otras habilidades
+249 Mazo
+250 Coge el distrito que quieras del Mazo para colocarlo en tu Mano. En la vista ampliada de la carta, puedes ver el número de cartas iguales a la seleccionada que quedan en el mazo en la esquina superior derecha.
+251 $2 destruye a $3 su %distrito usando el Polvorín
+252 Selecciona una carta de tu mano para colocarla bajo el museo (con lo que la pierdes) de modo que éste te dé un punto extra por ella al final de la partida
+253 $2 coloca una carta de su mano en el Museo
+254 $2 usa el campanario para que la partida termine con 7 distritos en lugar de con 8
+255 El %personaje no ha mostrado el respeto debido a la Corona y pierde su turno
+256 http://www.fiade.com/ciudadelas/

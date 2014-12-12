@@ -1,0 +1,259 @@
+1 Impossible de démarrer le Serveur. Le port de connexion est déjà utilisé
+2 Serveur
+3 Client
+4 Port
+5 Nom de la partie
+6 Nom
+7 Fermer
+8 Jouer
+9 Serveur
+10 Port du Serveur
+11 Connexion au server...
+12 Créer une partie
+13 Démarrer la partie
+14 joueurs
+15 Le Donjon ne peut être détruit/échangé
+16 Vous n'avez pas assez d'or pour détruire ce quartier
+17 Les quartiers de l'Evêque ne sont pas destructibles/échangeables
+18 Vous ne pouvez pas détruire/échanger un quartier d'une cité achevée
+19 L'usage de la Forge requiert 2 pièces d'or
+20 Echanger les cartes
+21 Vous pouvez échanger la totalité de vos cartes avec celle d'un autre joueur ou en échanger contre des cartes du paquet. Dans ce dernier cas, sélectionnez les cartes à échanger, et appuyez sur OK
+22 Laboratoire
+23 Selectionnez la carte que vous voulez défausser contre une pièce d'or
+24 Impossible de se connecter au serveur
+25 Connexion à %cciudadelas.f.host ( %cciudadelas.f.puerto )
+26 Connexion rompue avec le serveur
+27 Vous n'avez pas assez d'or pour construire ce quartier
+28 Vous ne pouvez pas construire 2 quartiers identiques dans la même cité
+29 Vous ne pouvez pas construire plus de $2 quartiers
+30 Vous ne pouvez plus construire de quartier ce tour-ci
+31 Vous ne pouvez pas construire en dehors de votre tour
+32 Prendre l'or
+33 Prendre 2 cartes
+34 Assassiner
+35 Voler
+36 Echanger les cartes
+37 Cartes supplémentaires
+38 Détruire un quartier
+39 Les revenus
+40 Forge
+41 Fin du tour
+42 La partie commence
+43 Connexion
+44 $2 prends $3 pièces d'or de ses revenus
+45 Défausser
+46 Vous ne pouvez garder qu'une seule carte. Choisissez en une à défausser
+47 Prendre 2 pièce d'or
+48 $2 prends $3 cartes %m
+49 $2 défausse $3 carte(s)
+50 Défaussées:
+51 Une carte défaussée face cachée
+52 Déconnectés: $2
+53 $2 choisi son personnage...
+54 Nouveau tour. $2 est le premier a choisir son personnage
+55 $2 construit
+56 $2 assassine le/la
+57 $2 détruit un quartier de $4 : " $+ %distrito $+ "
+58 Cimetierre
+59 $2 dépense une pièce d'or avec le cimetierre pour prendre dans sa main la carte détruite par le Condotierre: " %carta "
+60 $2 vole %personaje
+61 $2 échange ses cartes avec $3
+62 C'est votre tour en tant que %personaje
+63 Le serveur est incapable de connecter la partie. Vérifiez que le port est libre (PareFeu ?)
+64 Parties
+65 tour de %personaje ( $3 )
+66 Le/la %personaje est défaussé(e)
+67 Le/la %personaje est mort
+68 $2 utilise le Laboratoire pour défausser une carte et gagner une pièce d'or
+69 La partie est terminée. $2 gagne avec $3 points
+70 Le serveur ouvre un port sur %sciudadelas.f.puerto 
+71 Client connecté depuis
+72 Déconnecté
+73 Architecte
+74 Vous avez besoin de 2 pièces d'or pour utiliser la Forge
+75 Vous n'avez pas la Forge, vous ne pouvez donc pas l'utiliser
+76 Vous n'avez pas le Laboratoire, vous ne pouvez donc pas l'utiliser
+77 Vous pouvez uniquement utiliser le Laboratoire en défaussant une carte
+78 Vous ne pouvez détruire un quartier QUE si vous êtes le Condotierre
+79 Il vous faut au moins une pièce d'or pour utiliser le Cimetierre
+80 Vous n'avez pas le Cimetierre, vous ne pouvez donc pas l'utiliser
+81 Le Magicien échange des cartes avec celle du paquet
+82 Vous n'avez pas le quartier que vous voulez construire
+83 Comptoir
+84 Marché
+85 Taverne
+86 Port
+87 Echoppe
+88 Hotel de Ville
+89 Prison
+90 Caserne
+91 Tour de Garde
+92 Forteresse
+93 Temple
+94 Eglise
+95 Monastère
+96 Manoir
+97 Cathédrale
+98 Chateau
+99 Palais
+100 Cours des Miracles
+101 Donjon
+102 Trésor Impérial
+103 Carrière
+104 Bibliothèque
+105 Grande Muraille
+106 Ecole de Magie
+107 Université
+108 Observatoire
+109 Fontaine aux Souhaits
+110 Dracoport
+111 Assassin
+112 Voleur
+113 Magicien
+114 Roi
+115 Evêque
+116 Marchand
+117 Condotierre
+118 Annoncez le PERSONNAGE que vous assassinez. Le joueur qui le possède se tait pendant tout le tour et ne dévoile pas sa carte.
+119 Annoncez le PERSONNAGE que vous volez. Au début de son tour, le joueur qui dévoile ce personnage vous donne son or. Vous ne pouvez volez ni l'assassin, ni un personnage assassiné.
+120 N'importe quand dans votre tour, vous pouvez soit 1) Echanger toutes vos cartes en main contre la totalité de celles dans la main d'un autre joueur. 2) Défausser tout ou partie de vos cartes en main et en piocher autant
+121 Une fois par tour, vous pouvez recevoir autant d'or que de quartier noble (jaune) dans votre cité. Quand vous dévoilez le roi, vous recevez immédiatement la courrone et vous serez donc le premier joueur à choisir votre personnage au prochain tour.
+122 Une fois par tour, vous pouvez recevoir autant d'or que de quartier religieux (bleu) dans votre cité. Vos quartiers ne sont pas destructibles/échangeables.
+123 Une fois par tour, vous pouvez recevoir autant d'or que de quartier marchand (vert) dans votre cité. Une fois votre tour débuté, vous recevez une pièce d'or supplémentaire.
+124 Une fois votre tour débuté, vous piochez 2 cartes supplémentaire. Vous pouvez construire jusqu'à 3 quartiers.
+125 Une fois par tour, vous pouvez recevoir autant d'or que de quartier militaire (rouge) dans votre cité. A la fin de votre tour, vous pouvez détruire un quartier pour le prix de son coût moins une pièces d'or.
+126 Pour le décompte des points, la cours des miracles est considérée de la couleur de votre choix. Vous ne pouvez pas utiliser cette capacité si vous l'avez construite au dernier tour.
+127 Le donjon est indesctructible.
+128 Pour le décompte des points, le Trésor Impérial vaut autant de points que d'or que vous possédez.
+129 Vous êtes autorisé à construire des quartiers de même nom. Vous ne perdez pas ces quartiers si la Carrière est détruite.
+130 Si vous piochez des cartes au début de votre tour, vous en gardez une supplémentaire au lieu de la défausser.
+131 La cout de destruction de vos quartiers par le Condotierre augmente de 1.
+132 Pour les revenus, l'Ecole de Magie est de la couleur de votre choix.
+133 Ce quartier coute 6 pièces d'or à poser, mais rapporte 8 points à la fin de la partie.
+134 Pour une pièce d'or, vous pouvez récuperer dans votre main un quartier détruit par le Condotierre le tour précédent. Vous ne pouvez pas utilisez cette capacité sur un quartier que vous avez détruit.
+135 Une fois par tour, vous pouvez piocher 3 cartes pour le coût de 2 pièces d'or.
+136 Si vous choisissez de piocher au début de votre tour, vous le faites parmis 3 cartes et vous en reposez 2 sous la pioche.
+137 Une fois par tour, vous pouvez défausser une carte pour gagner une pièce d'or.
+138 La Fontaine aux Souhaits rapporte un point supplémentaire par autre quartier violet dans votre cité.
+139 Ce quartier coute 6 pièces d'or à poser, mais rapporte 8 points à la fin de la partie.
+140 Sorcière
+141 Après avoir normalement pris ses deux pièces d’or ou sa carte, vous annoncez quel autre personnage vous ensorcelez, et votre tour se termine sans que vous puissiez bâtir de quartier. Lorsque le personnage ensorcelé est appelé, le joueur qui a ce personnage se révèle, prend normalement ses deux pièces d’or ou sa carte, et son tour se termine. Vous terminez alors son tour comme si c’était vous qui aviez son personnage, bénéficiant de tous les pouvoirs du personnage ensorcelé (y compris la pièce d’or supplémentaire du marchand ou les deux cartes de l’Architecte) et pouvant construire dans votre propre cité. Si le Roi est ensorcelé, le joueur qui a le Roi prend néanmoins la couronne. Si personne n’a choisi le personnage ensorcelé, la Sorcière ne termine jamais son tour. Le Voleur ne peut voler ni la sorcière, ni le personnage ensorcelé.
+142 Bailli
+143 Tout joueur qui construit pendant son tour doit, s'il le peut, donner une pièce d'or au Bailli. Ceci s'applique également à l'assassin et à la sorcière au moment où le Bailli est dévoilé.
+144 Sorcier
+145 Vous pouvez regarder la main de cartes d’un autre joueur et en choisir une. Vous pouvez soit mettre la carte choisie dans votre main, soit la poser dans votre cité en en payant normalement le coût, mais cela ne compte pas comme le quartier que vous pouvez bâtir ce tour ci. Vous pouvez donc bâtir en tout deux quartiers, un de votre main et celui que vous prenez dans la main d’un autre joueur. Vous pouvez bâtir un quartier de même nom qu’un quartier déjà présent dans votre cité.
+146 Empereur
+147 Vous recevez une pièce d’or par quartier noble (jaune) dans votre cité. Vous prenez la couronne et la donnez à un autre joueur de votre choix, qui doit vous donner en paiement, selon son choix, une pièce d’or ou une carte quartier de sa main. Vous pouvez donner la couronne à un joueur qui n’a ni or, ni cartes, mais vous ne recevez alors aucun paiement. Vous ne pouvez ni prendre la couronne pour vous même, ni la laisser au joueur qui l’avait auparavant. Comme le Roi, l’Empereur ne doit pas être parmi les cartes écartées faces visibles.
+148 Abbé
+149 Vous recevez une pièce d’or par quartier religieux (bleu) dans votre cité. Le joueur le plus riche doit vous donner une pièce d’or. S’il y a égalité, ou si vous même êtes le plus riche, vous ne recevez rien.
+150 Alchimiste
+151 Vous récupérez immédiatement l’or que vous dépensez pour bâtir un quartier (cela signifie que vous ne le dépensez pas réellement, mais ne pouvez cependant pas bâtir de quartier coûtant plus que vous ne pourriez payer). Vous ne récupérez pas l’or que vous payez pour d’autres raisons (au Bailli par exemple)
+152 Navigateur
+153 Après avoir normalement pris deux pièces d’or ou une carte, vous pouvez, selon votre choix, soit prendre 4 pièces d’or supplémentaires à la banque, soit piocher quatre cartes. Votre tour s’arrête ensuite, et vous ne pouvez bâtir aucun quartier.
+154 Diplomate
+155 Vous recevez une pièce d’or par quartier militaire (rouge) dans votre cité. Vous pouvez échanger un quartier de votre cité contre un quartier d’une autre cité. Si le quartier que vous prenez à un coût supérieur à celui du quartier que vous cédez, vous devez payer la différence en or au joueur avec lequel vous faites l’échange (ce coût est modifié par la Grande Muraille et les ornementations de l’Artiste). Vous ne pouvez pas prendre un Donjon, ni prendre un quartier dans la cité de l’Évêque.
+156 Reine
+157 Vous recevez trois pièces d’or de la banque si vous êtes assis à côté du joueur qui a pris la carte Roi. Si le Roi était assis à vos côtés, mais a été assassiné, vous recevez les trois pièces d’or après votre tour, lorsque cela est révélé.
+158 Artiste
+159 Vous pouvez décorer un ou deux quartiers de votre cité en plaçant sur chacun d’entre eux une pièce d’or. Le coût de construction du quartier, et le prix à payer pour le détruire, sont augmentés de 1. Il ne peut pas y avoir plus d’une pièce d’or sur 
+un quartier.
+160 Personnages
+161 Choisissez les personnages valables pour la partie
+162 9 Personnages
+163 Etes vous sûr de vouloir défausser cela ?
+164 Le Navigateur ne peut pas construire
+165 Prendre 4 cartes
+166 Prendre 4 pièces d'or
+167 $2 prend 4 pièce d'or en tant que Navigateur
+168 $2 paye une pièce d'or au Bailli ( $3 )
+169 Choisissez la carte que vous souhaitez prendre à $2
+170 $2 (Sorcier) prend une carte de $3
+171 $2 donne une pièce d'or à $3 (Bailli)
+172 Echanger un quartier
+173 Vous pouvez échanger un de vos quartier contre un autre
+174 Vous ne pouvez échanger un quartier de l'Evêque
+175 Vous n'avez pas assez d'or pour échanger ce quartier
+176 $2 (Diplomate) échange un quartier avec $3
+177 Un joueur avec ses $2 quartiers ne peut pas échanger ses quartiers
+178 Un joueur ne peux avoir 2 quartier identique grâce à l'échange du Diplomate
+179 Donner la couronne
+180 $2 (Empereur) conne la couronne à $3
+181 Vous devez donner à l'Empereur une pièce d'or ou une carte de votre choix
+182 Donner une pièce d'or
+183 $2 n'a rien à donner à $3 (Empereur)
+184 $2 donne une pièce d'or à $3 (Empereur)
+185 $2 donne une carte à $3 (Empereur)
+186 Vous ne pouvez pas vous donner la couronne
+187 Vous ne pouvez donner la couronne à un joueur qui l'a déjà
+188 $2 (Reine) prend 3 pièces d'or car elle est assise à côté de la couronne
+189 Décorer
+190 Vous n'avez pas d'or
+191 Vous ne pouvez décorer qu'un quartier en votre possession
+192 Vous ne pouvez décorer un quartier qu'une seule fois
+193 $2 (Artiste) décore : " %distrito "
+194 Ensorceler
+195 $2 ensorcelle %personaje
+196 %personaje est ensorcelé. Sa fin de tour est jouée par la Sorcière ( $3 )
+197 La Sorcière ne peut construire que pendant le tour du personnage ensorcelé
+198 Vous ne pouvez construire si vous êtes ensorcelé
+199 ?
+200 Nom incorrect. Choisissez-en un autre.
+201 Défausse
+202 %personaje est pris par un joueur déconnecté
+203 Déconnecté
+204 Table
+205 Main
+206 Connexion coupée avec le Serveur Central !
+207 Points
+208 Cartes
+209 Or
+210 Options
+211 Connexion au Serveur Central.
+212 Langue
+213 Impossible de se connecté au serveur central.
+214 Il existe une mise à jour du jeu. Vous ne pouvez pas vous connecter au serveur central avec une version obsolète
+215 Dans une partie à 2 joueurs, chaque joueur choisi un personnage puis en défausse un autre.
+216 Choisissez votre personnage pour ce tour-ci. Placez le curseur sur un personnage pour avoir plus d'information sur ses capacités.
+217 Choisissez un personnage à assassiner. Ce personnage perds son tour (mais ne peut pas être volé)
+218 Choisissez un personnage à voler. Quand celui-ci sera dévoilé, il vous donnera son or. Vous ne pouvez vouler ni l'assassin/sorcière, ni un personnage volé/ensorcelé.
+219 Choisissez un personnage à ensorceler. Quand celui-ci sera dévoilé, il prendra normalement 2 pièces d'or ou 1 carte parmis 2 puis vous finissez son tour comme si vous aviez ce personnage, pour construire ou utiliser sa capacité.
+220 Serveur NAT
+221 Tu as besoin d'une résolution au moins de 1024x768 pour jouer
+222 Casino
+223 Hospital
+224 Poorhouse
+225 Lighthouse
+226 Powderhouse
+227 Manufacture
+228 Museum
+229 Tower_Bell
+230 Throne_Hall
+231 Park
+232 At the end of the game, you score 1 victory point bonus for each card in your hand.
+233 If you are assassinated, you still take two gold or draw two cards and discard one when comes your turn, but that’s all you do this turn.
+234 If you have no gold at the end of your turn, get 1 gold from the bank.
+235 When you play the lighthouse in your city, look through the district cards deck, choose one card and place it in your hand, then reshuffle the deck.
+236 During your turn, you can destroy the powderhouse and destroy another district card of your choice in any player’s city.
+237 The building cost for any other purple building you build in your city is reduced by one. This doesn’t affect the price paid by the Condottiere to destroy it.
+238 On your turn, you may place one district card from your hand, face down, under the Museum. At the end of the game, you score 1 extra victory point for each card under the Museum.
+239 When you play the Tower Bell in your city, you may shorten the game and decide that it will end at the end of the turn in which a player builds his seventh district. 
+If you do, and the Tower bell is later destroyed by the Condottiere, end conditions go back to normal.
+You can do this even if the Tower Bell is your seventh district.
+240 Every time the crown moves from a player to another, you receive 1 gold from the bank.
+241 If you have no card in hand at the end of your turn, draw two cards from the drawing pile.
+242 Bal_room
+243 When you have the crown, all other players must say “thanks, your excellency” after you call his character. If a player forgets and starts his turn without saying it, he loses his turn.
+244 thanks, your excellency
+245 $2 gets 1 gold because he owns the Poorhouse and has not money
+246 $2 gets 1 gold because the crown moved and he owns the Trone Hall
+247 The %personaje ( $3 ) is dead but owns the Hospital so he can play part of his turn
+248 The Hospital allows you to draw cards or get gold, but not to build or to use especial habilities
+249 Deck
+250 Get a district of your choice from the Deck to your Hand.
+251 $2 destroys $3 's %distrito using the Powderhouse
+252 Choose a district from your Hand to place it under the Museum (you will loose that district) so you will receive an extra victory point at the end of the game
+253 $2 places a card under the Museum
+254 $2 uses the Tower Bell so the game will end when a player builds 7 districts
+255 The %personaje looses turn (Bal Room)
+256 http://www.fiade.com/citadels/

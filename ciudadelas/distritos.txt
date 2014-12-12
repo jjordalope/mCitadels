@@ -1,0 +1,82 @@
+1 $texto(83) 2 0 6 tienda.jpg
+2 $texto(83) 2 0 6 tienda.jpg
+3 $texto(84) 2 0 6 mercado.jpg
+4 $texto(84) 2 0 6 mercado.jpg
+5 $texto(84) 2 0 6 mercado.jpg
+6 $texto(85) 1 0 6 taberna.jpg
+7 $texto(85) 1 0 6 taberna.jpg
+8 $texto(85) 1 0 6 taberna.jpg
+9 $texto(85) 1 0 6 taberna.jpg
+10 $texto(85) 1 0 6 taberna.jpg
+11 $texto(83) 2 0 6 tienda.jpg
+12 $texto(83) 2 0 6 tienda.jpg
+13 $texto(84) 2 0 6 mercado.jpg
+14 $texto(86) 4 0 6 puerto.jpg
+15 $texto(86) 4 0 6 puerto.jpg
+16 $texto(86) 4 0 6 puerto.jpg
+17 $texto(87) 3 0 6 almacenes.jpg
+18 $texto(87) 3 0 6 almacenes.jpg
+19 $texto(87) 3 0 6 almacenes.jpg
+20 $texto(88) 5 0 6 ayuntamiento.jpg
+21 $texto(88) 5 0 6 ayuntamiento.jpg
+22 $texto(89) 2 0 8 prision.jpg
+23 $texto(89) 2 0 8 prision.jpg
+24 $texto(89) 2 0 8 prision.jpg
+25 $texto(90) 3 0 8 cuartel.jpg
+26 $texto(90) 3 0 8 cuartel.jpg
+27 $texto(90) 3 0 8 cuartel.jpg
+28 $texto(91) 1 0 8 atalaya.jpg
+29 $texto(91) 1 0 8 atalaya.jpg
+30 $texto(91) 1 0 8 atalaya.jpg
+31 $texto(92) 5 0 8 fortaleza.jpg
+32 $texto(92) 5 0 8 fortaleza.jpg
+33 $texto(92) 5 0 8 fortaleza.jpg
+34 $texto(93) 1 0 5 templo.jpg
+35 $texto(93) 1 0 5 templo.jpg
+36 $texto(93) 1 0 5 templo.jpg
+37 $texto(94) 2 0 5 iglesia.jpg
+38 $texto(94) 2 0 5 iglesia.jpg
+39 $texto(94) 2 0 5 iglesia.jpg
+40 $texto(95) 3 0 5 monasterio.jpg
+41 $texto(95) 3 0 5 monasterio.jpg
+42 $texto(95) 3 0 5 monasterio.jpg
+43 $texto(95) 3 0 5 monasterio.jpg
+44 $texto(96) 3 0 4 señorio.jpg
+45 $texto(96) 3 0 4 señorio.jpg
+46 $texto(96) 3 0 4 señorio.jpg
+47 $texto(96) 3 0 4 señorio.jpg
+48 $texto(96) 3 0 4 señorio.jpg
+49 $texto(97) 5 0 5 catedral.jpg
+50 $texto(97) 5 0 5 catedral.jpg
+51 $texto(99) 5 0 4 palacio.jpg
+52 $texto(99) 5 0 4 palacio.jpg
+53 $texto(98) 4 0 4 castillo.jpg
+54 $texto(98) 4 0 4 castillo.jpg
+55 $texto(98) 4 0 4 castillo.jpg
+56 $texto(98) 4 0 4 castillo.jpg
+57 $texto(98) 4 0 4 castillo.jpg
+58 $texto(100) 2 0 0 patiomilagros.jpg $texto(126)
+59 $texto(101) 3 0 0 torreon.jpg $texto(127)
+60 $texto(102) 4 0 0 tesoro_imperial.jpg $texto(128)
+61 $texto(103) 5 0 0 cantera.jpg $texto(129)
+62 $texto(104) 6 0 0 biblioteca.jpg $texto(130)
+63 $texto(105) 6 0 0 gran_muralla.jpg $texto(131)
+64 $texto(106) 6 0 0 escuela_de_magia.jpg $texto(132)
+65 $texto(107) 6 0 0 universidad.jpg $texto(133)
+66 $texto(58) 5 0 0 cementerio.jpg $texto(134)
+67 $texto(40) 5 0 0 fabrica.jpg $texto(135)
+68 $texto(108) 5 0 0 observatorio.jpg $texto(136)
+69 $texto(22) 5 0 0 laboratorio.jpg $texto(137)
+70 $texto(109) 5 0 0 fuente_de_los_deseos.jpg $texto(138)
+71 $texto(110) 6 0 0 puerta_dragon.jpg $texto(139)
+72 $texto(222) 5 0 0 casino.jpg $texto(232)
+73 $texto(223) 6 0 0 hospital.jpg $texto(233)
+74 $texto(224) 4 0 0 albuergue.jpg $texto(234)
+75 $texto(225) 3 0 0 faro.jpg $texto(235)
+76 $texto(226) 3 0 0 polvorin.jpg $texto(236)
+77 $texto(227) 5 0 0 factoria.jpg $texto(237)
+78 $texto(228) 4 0 0 museo.jpg $texto(238)
+79 $texto(229) 5 0 0 campanario.jpg $texto(239)
+80 $texto(230) 6 0 0 sala_del_trono.jpg $texto(240)
+81 $texto(231) 6 0 0 parque.jpg $texto(241)
+82 $texto(242) 6 0 0 balroom.jpg $texto(243)
