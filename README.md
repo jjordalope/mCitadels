@@ -1,20 +1,19 @@
 mCitadels
 ---------
 
-mCitadels es un conjunto de scripts de mIRC para jugar al juego de cartas "Ciudadelas" online en ordenadores con el sistema operativo Windows.
+mCitadels is a mIRC script designed to create online multiplayer "Citadels" games on Windows running machines for 2 to 5 players.
 
-No son scripts para jugar a ciudadelas a través del IRC, no es necesario conectarse a ninguna red de IRC ni interaccionar con servidor de IRC alguno. Se ha utilizado mIRC simplemente porque el lenguaje de script del mismo es sencillo y es lo que había.
+It is not a script to play using IRC, it is an stand alone application which does not need an IRC server to run.
 
-Instrucciones de instalación y uso en el wiki del proyecto:
+Installation and usage instructions can be found in the project's wiki:
 https://github.com/jjordalope/mCitadels/wiki
 
-El Ciudadelas es un juego de Bruno Faiduti (http://faidutti.com/).
+Citadels is a Card Game created by Bruno Faiduti (http://faidutti.com/).
 
-Las ilustraciones que acompañan al juego han sido realizadas por Julien Delval, Florence Magnin, Jean-Louis Mourier y Didier Graffet. El juego es distribuido en España por Millennium (http://www.millenniumdist.com/) y su página oficial en español es http://www.edgeent.com/juegos/coleccion/ciudadelas.
+The game's pictures were created by Julien Delval, Florence Magnin, Jean-Louis Mourier and Didier Graffet. The game is distributed in Spain by Millennium (http://www.millenniumdist.com/) and the official page is located at: http://www.edgeent.com/juegos/coleccion/ciudadelas.
 
-El código del script en sí está sujeto a la licencia GPL. Nótese que la licencia sólo se aplica al código y no a todo el paquete mCitadels, pues mIRC tiene su propia licencia Shareware y las imágenes y el concepto del juego su Copyright.
+You need a minimum Monitor resolution of 1024px to play.
 
-IMPORTANTE: en su versión actual, el juego requiere una resolución de pantalla de 1024 o más para jugar y está limitado a 5 jugadores.
+The mirc script code is GPL. mIRC itself is shareware and the pictures are copyright and do not belong to me.
 
-Nota adicional:
-- Fichero de mensajes en francés cortesía de askalab
+English, spanish and french languajes supported.
