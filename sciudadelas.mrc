@@ -1,5 +1,5 @@
 ;Ciudadelas servidor
-;GNU 2004 kat@fiade.com
+;GPL 2004 kat@fiade.com
 
 on 1:exit: { unset %sciudadelas.v.* }
 
@@ -42,7 +42,7 @@ alias crea_partida {
     window -c @sjugadores
     window -hl @sjugadores
 
-    ;preparamos mazo: cargamos distritos, eliminamos tokens sobrantes y añadimos los necesarios, barajamos.
+    ;preparamos mazo: cargamos distritos, eliminamos tokens sobrantes y aÃ±adimos los necesarios, barajamos.
     window -c @sdistritos
     window -hl @sdistritos
     loadbuf -e @sdistritos ciudadelas/distritos.txt
@@ -55,7 +55,7 @@ alias crea_partida {
 
     sciudadelas.shuffle @sdistritos
 
-    ;si jugamos con el diplomático, quitamos el cementerio del mazo
+    ;si jugamos con el diplomÃ¡tico, quitamos el cementerio del mazo
     if ( $istok(%sciudadelas.f.personajes,17,32) == $true ) { dline @sdistritos $fline(@sdistritos,66 $+ $chr(32) $+ *,1) }
 
     ;si no hay asesino, quitamos el hospital del mazo
@@ -96,7 +96,7 @@ alias inicia_partida {
   ;ahora, enviamos a todos los sockets los nombres de los jugadores
   var %c = 0 , %total = $sock(sciudadelasC*,0)
 
-  ;esto es un marcador que nos indica en qué punto del mazo de distritos estamos
+  ;esto es un marcador que nos indica en quÃ© punto del mazo de distritos estamos
   ;nota que NO es una variable local
   %sciudadelas.v.pos = 0
 
@@ -121,8 +121,8 @@ alias inicia_partida {
   descarta_bocarriba
   descarta_bocabajo
 
-  ;una vez repartido todo, iniciamos la secuencia de elección de personaje
-  ;¡sólo el cliente que elige debe saber qué cartas hay!
+  ;una vez repartido todo, iniciamos la secuencia de elecciÃ³n de personaje
+  ;Â¡sÃ³lo el cliente que elige debe saber quÃ© cartas hay!
 
   var %corona = $corona , %s = $damesocket(%corona)
 
@@ -132,8 +132,8 @@ alias inicia_partida {
 }
 
 ;roba_cartas jugador numero_cartas <motivo> asigna cartas del mazo al jugador.
-;el tercer parámetro es opcional y sirve para justificar robos "extra" por maravillas o personajes.
-;si usamos $roba_cartas(), además de lo anterior, recibiremos como resultado las cartas dadas
+;el tercer parÃ¡metro es opcional y sirve para justificar robos "extra" por maravillas o personajes.
+;si usamos $roba_cartas(), ademÃ¡s de lo anterior, recibiremos como resultado las cartas dadas
 
 alias roba_cartas {
 
@@ -160,8 +160,8 @@ alias roba_cartas {
 
 ;todeck idcarta1 idcarta2 ...
 ;asigna la letra M a la carta (osea, la "mete" en el Mazo) y la coloca al final del mismo
-;esta función, al contrario que roba_cartas, no actualiza 
-;información sobre la mano del jugador, puntos ni envía mensajes
+;esta funciÃ³n, al contrario que roba_cartas, no actualiza 
+;informaciÃ³n sobre la mano del jugador, puntos ni envÃ­a mensajes
 
 alias todeck {
 
@@ -183,16 +183,16 @@ alias todeck {
 
   }
 
-  ;¡NOTA!: al quitar una carta "asignada" y moverla al final, estamos haciendo que nuestro puntero
+  ;Â¡NOTA!: al quitar una carta "asignada" y moverla al final, estamos haciendo que nuestro puntero
   ;%sciudadelas.v.pos "avance" hacia adelante, con lo que nos saltamos cartas que no han salido y hacemos
-  ;más probable que los jugadores vean en juego cartas de las que se han descartado.
-  ;La solución pasa por hacer retroceder %sciudadelas.v.pos tanto como cartas hayamos movido
+  ;mÃ¡s probable que los jugadores vean en juego cartas de las que se han descartado.
+  ;La soluciÃ³n pasa por hacer retroceder %sciudadelas.v.pos tanto como cartas hayamos movido
 
   dec %sciudadelas.v.pos %total
 
 }
 
-;descartamos cartas bocarriba según reglas en uso...
+;descartamos cartas bocarriba segÃºn reglas en uso...
 ;marcamos las descartadas bocarriba con "DU"
 ;rey y emperador NO pueden ser descartados bocaarriba
 
@@ -218,9 +218,9 @@ alias descarta_bocarriba {
 
 }
 
-;descarta_bocabajo <numero> marca con "DD" la carta pasada como parámetro.
-;si no se pasa parámetro, elige una carta al azar de entre aquellas que NO
-;estén marcadas ni como pertenecientes a un jugador ni como descartadas.
+;descarta_bocabajo <numero> marca con "DD" la carta pasada como parÃ¡metro.
+;si no se pasa parÃ¡metro, elige una carta al azar de entre aquellas que NO
+;estÃ©n marcadas ni como pertenecientes a un jugador ni como descartadas.
 
 alias descarta_bocabajo {
 
@@ -232,7 +232,7 @@ alias descarta_bocabajo {
   }
   else {
 
-    ;sólo elegimos entre las que están L(ibres)
+    ;sÃ³lo elegimos entre las que estÃ¡n L(ibres)
     var %c = 0 , %total = $fline(@spersonajes,* $+ $chr(32) $+ L,0)
 
     if (%total) {
@@ -251,8 +251,8 @@ alias descarta_bocabajo {
 
 ;$corona: nos da el nombre del jugador que tiene la corona en ese momento
 ;/corona nombrejugador
-;si pasamos un nombre de jugador como parámetro, pondrá la corona en manos de ese jugador y notificará el cambio
-;asignamos al azar si el destinatario está desconectado. Gestionamos maravilla "sala del trono".
+;si pasamos un nombre de jugador como parÃ¡metro, pondrÃ¡ la corona en manos de ese jugador y notificarÃ¡ el cambio
+;asignamos al azar si el destinatario estÃ¡ desconectado. Gestionamos maravilla "sala del trono".
 
 alias corona {
 
@@ -267,7 +267,7 @@ alias corona {
 
       var %nombre_corona = $gettok(%linea,1,32)
 
-      ;si no nos han pasado parámetro, devolvemos la info pedida sin más
+      ;si no nos han pasado parÃ¡metro, devolvemos la info pedida sin mÃ¡s
       if (!$1) { return %nombre_corona }
 
       ;si no, se trata de asignar a un nuevo jugador la corona
@@ -276,7 +276,7 @@ alias corona {
         var %nl = $fline(@sjugadores,$1 $+ $chr(32) $+ *,1)
 
         ;puede darse el caso de que el jugador destinatario de la corona haya desconectado,
-        ;si es así, elegimos a uno de los restantes al azar
+        ;si es asÃ­, elegimos a uno de los restantes al azar
         if (!%nl) { var %nl = $rand(1, $line(@sjugadores,0)) }
 
         var %linea2 = $line(@sjugadores,%nl) , %nombre_jugador = $gettok(%linea2,1,32)
@@ -313,8 +313,8 @@ alias corona {
 
   }
 
-  ;si estamos aquí, es porque ningún jugador tiene la corona
-  ;algo no ha ido bien, quizás haya desconectado, asignamos a quien nos dicen o al azar
+  ;si estamos aquÃ­, es porque ningÃºn jugador tiene la corona
+  ;algo no ha ido bien, quizÃ¡s haya desconectado, asignamos a quien nos dicen o al azar
   var %nl = $fline(@sjugadores, $1 $+ $chr(32) $+ *,1)
 
   if (!%nl) { var %nl = $rand(1, $line(@sjugadores,0)) }
@@ -342,8 +342,8 @@ alias personajes {
 
 }
 
-;$reglas devuelve el número de descartes bocarriba en función del número de jugadores y de si usamos 8 ó 9 personajes
-;actualiza personajes usables en función del número de jugadores
+;$reglas devuelve el nÃºmero de descartes bocarriba en funciÃ³n del nÃºmero de jugadores y de si usamos 8 Ã³ 9 personajes
+;actualiza personajes usables en funciÃ³n del nÃºmero de jugadores
 ;esto es necesario para los cambios de reglas que se producen durante el juego cuando alguien desconecta
 alias reglas {
 
@@ -354,7 +354,7 @@ alias reglas {
     %sciudadelas.f.personajes = $reptok(%sciudadelas.f.personajes,13,4,1,32)
     reset_personajes
   }
-  ;si juegan menos de 4 tios, quitamos 9º personaje
+  ;si juegan menos de 4 tios, quitamos 9Âº personaje
   if (%n < 4) {
     %sciudadelas.f.personajes = $remtok(%sciudadelas.f.personajes,9,1,32)
     %sciudadelas.f.personajes = $remtok(%sciudadelas.f.personajes,9,1,32)
@@ -398,7 +398,7 @@ on 1:sockread:sciudadelasC*:{
 }
 
 ;cuando alguien desconecta informamos al resto de jugadores y borramos de listado interno
-;además, trataremos de evitar que la desconexión deje la partida colgada
+;ademÃ¡s, trataremos de evitar que la desconexiÃ³n deje la partida colgada
 on 1:sockclose:sciudadelasC*:{
   var %n = $sock($sockname).mark
   if (%n) {
@@ -407,7 +407,7 @@ on 1:sockclose:sciudadelasC*:{
     sciudadelas.msg sciudadelasC* Q %n
     dline @sjugadores $fline(@sjugadores, %n $+ $chr(32) $+ *,1)
 
-    ;si era el único conectado, reseteamos todo
+    ;si era el Ãºnico conectado, reseteamos todo
     if ( !$sock(sciudadelasC*,0) ) {
 
       sockclose sciudadelas*
@@ -419,8 +419,8 @@ on 1:sockclose:sciudadelasC*:{
     }
     else {
 
-      ;si estábamos jugando, miramos a ver si ha sido tan cabrón de salirse en su turno sin acabarlo;
-      ;de ser así, saltamos turno como corresponda
+      ;si estÃ¡bamos jugando, miramos a ver si ha sido tan cabrÃ³n de salirse en su turno sin acabarlo;
+      ;de ser asÃ­, saltamos turno como corresponda
 
       if ( %n == $gettok(%sciudadelas.v.turno,2,32) ) {
 
@@ -431,7 +431,7 @@ on 1:sockclose:sciudadelasC*:{
           var %ganador = $elige_ganador
           if (%ganador) { 
 
-            ;se acabó la partida
+            ;se acabÃ³ la partida
 
             ;borramos variables temporales del servidor
             unset %sciudadelas.v.*
@@ -446,7 +446,7 @@ on 1:sockclose:sciudadelasC*:{
             unset %sciudadelas.v.bruja 
             unset %sciudadelas.v.embrujado
 
-            ;también limpiamos variable del recaudador...
+            ;tambiÃ©n limpiamos variable del recaudador...
             unset %sciudadelas.v.construida
 
             elige_personaje
@@ -465,8 +465,8 @@ on 1:sockclose:sciudadelasC*:{
         }
       }
 
-      ;si no se ha salido en su turno de juego, tal vez se haya salido en la ronda de elección,
-      ;de ser así, la reiniciamos para ajustar descartes al nuevo número de jugadores
+      ;si no se ha salido en su turno de juego, tal vez se haya salido en la ronda de elecciÃ³n,
+      ;de ser asÃ­, la reiniciamos para ajustar descartes al nuevo nÃºmero de jugadores
       if (($personajes) && (%sciudadelas.v.pos)) { elige_personaje }
 
     }
@@ -508,7 +508,7 @@ alias damesocket {
 
 ;JUEGO
 
-;función para "barajar". En nuestro caso cada "mazo" de cartas está representado por una @ventana
+;funciÃ³n para "barajar". En nuestro caso cada "mazo" de cartas estÃ¡ representado por una @ventana
 ;esta funcion tiene como argumento el nombre de la ventana y se encarga de distribuir "al azar" las
 ;lineas de la misma
 alias sciudadelas.shuffle {
@@ -532,7 +532,7 @@ alias sciudadelas.shuffle {
 
 alias bal_room {
 
-  ;si está construida la BAL ROOM y su dueño tiene la corona, cuidadín
+  ;si estÃ¡ construida la BAL ROOM y su dueÃ±o tiene la corona, cuidadÃ­n
   var %bal_room = $line(@sdistritos, $fline(@sdistritos, 82 $+ $chr(32) $+ * ,1)) 
   var %bal_room_built = $gettok(%bal_room,4,32)
 
@@ -570,14 +570,14 @@ alias bal_room {
 
 }
 
-;asigna_personaje <jugador> <numeropersonaje> -> asigna ese personaje y continua con la secuencia de elección
-;si pasamos un tercer parámetro, se entiende que venimos de un descarte bocaabajo, no asignamos personaje
+;asigna_personaje <jugador> <numeropersonaje> -> asigna ese personaje y continua con la secuencia de elecciÃ³n
+;si pasamos un tercer parÃ¡metro, se entiende que venimos de un descarte bocaabajo, no asignamos personaje
 ;sino que avanzamos un paso en la ronda
 alias asigna_personaje {
 
   ;cuando un jugador elige un personaje, le marcamos como tal y "enviamos las cartas" al siguiente,
-  ;el proceso se repite hasta que sólo quede una carta libre; por fuerza, ésta se descarta bocabajo
-  ;y enviamos señal de inicio de turno al personaje número uno
+  ;el proceso se repite hasta que sÃ³lo quede una carta libre; por fuerza, Ã©sta se descarta bocabajo
+  ;y enviamos seÃ±al de inicio de turno al personaje nÃºmero uno
 
   if (!$3) {
     var %c = $fline(@spersonajes, $2 $+ $chr(32) $+ * ,1)
@@ -648,7 +648,7 @@ alias sciudadelas.procesa {
 
     sciudadelas.msge $1 M %n $3- 
 
-    ;bal_room -> si habla en su turno y dice la frase mágica, lo recordamos
+    ;bal_room -> si habla en su turno y dice la frase mÃ¡gica, lo recordamos
     if ( ($3- == $texto(244)) && ($gettok(%sciudadelas.v.turno,2,32) == %n) ) { %sciudadelas.v.balroom = 1 }
 
     return
@@ -705,7 +705,7 @@ alias sciudadelas.procesa {
 
   if ($2 == WC) {
 
-    ;averiguamos de quién es la carta robada, actualizamos datos e informamos
+    ;averiguamos de quiÃ©n es la carta robada, actualizamos datos e informamos
     var %nc = $fline(@sdistritos,$3 $+ $chr(32) $+ *,1), %carta = $line(@sdistritos,%nc)
     var %owner = $gettok(%carta,6,32)
 
@@ -717,7 +717,7 @@ alias sciudadelas.procesa {
     status %n
     status %owner
 
-    ;a la víctima le mandamos en el mensaje el id de la carta para que la borre,
+    ;a la vÃ­ctima le mandamos en el mensaje el id de la carta para que la borre,
     ;el resto o bien no necesitan saberlo o bien es el hechicero y ya lo conoce.
     sciudadelas.msg $damesocket(%owner) WC %n %owner $3
     sciudadelas.msge $damesocket(%owner) WC %n %owner
@@ -804,7 +804,7 @@ alias sciudadelas.procesa {
 
     ;observatorio sin biblioteca: coge 3 y se descarta de 2
     ;observatorio y biblioteca: coge 3 y descarta 1
-    ;mismo mensaje en esta fase, al recibir el descarte habrá que comprobar de cuánto se descarta
+    ;mismo mensaje en esta fase, al recibir el descarte habrÃ¡ que comprobar de cuÃ¡nto se descarta
     if ( ((!%biblioteca) && (%observatorio)) || ((%biblioteca) && (%observatorio)) ) { 
       var %cartas =  $roba_cartas( %n , 3 , $texto(108) )
       sciudadelas.msg $1 DC %cartas
@@ -837,7 +837,7 @@ alias sciudadelas.procesa {
 
   if ($2 == GD) {
 
-    ;convertimos personajes "extra" a su equivalente clásico
+    ;convertimos personajes "extra" a su equivalente clÃ¡sico
     if ( $3 > 9 ) {
       if ($3 == 13) { var %p = 4 }
       if ($3 == 14) { var %p = 5 }
@@ -862,7 +862,7 @@ alias sciudadelas.procesa {
     ;comprobamos oro
     var %victima = $line(@sjugadores, $fline(@sjugadores, $3 $+ $chr(32) $+ *,1))
 
-    ;como ya he invocado la línea, no me merece la pena llamar a $oro y $cartas para esto
+    ;como ya he invocado la lÃ­nea, no me merece la pena llamar a $oro y $cartas para esto
     var %oro = $gettok( %victima ,4,32) , %cartas = $gettok(%victima,3,32)
     if ( (!%oro) && (!%cartas) ) { sciudadelas.msg sciudadelasC* EMN $3 %n }
     return
@@ -912,17 +912,17 @@ alias sciudadelas.procesa {
 
   if ($2 == DP) {
 
-    ;recibimos distrito_del_diplomático=$3 distrito_víctima=$4
+    ;recibimos distrito_del_diplomÃ¡tico=$3 distrito_vÃ­ctima=$4
     var %nc1 = $fline(@sdistritos,$3 $+ $chr(32) $+ *,1) , %carta1 = $line(@sdistritos,%nc1)
     var %nc2 = $fline(@sdistritos,$4 $+ $chr(32) $+ *,1) , %carta2 = $line(@sdistritos,%nc2)
     var %owner1 = $gettok(%carta1,6,32) , %owner2 = $gettok(%carta2,6,32)
     var %precio1 = $gettok(%carta1,3,32) , %precio2 = $gettok(%carta2,3,32)
 
-    ;¿intercambia un distrito que le pertenece?
+    ;Â¿intercambia un distrito que le pertenece?
     if ( %owner1 != $gettok($line(@spersonajes,$fline(@spersonajes,17 $+ $chr(32) $+ *,1)) ,3,32) ) { sciudadelas.msg $1 E 173 }
     else {
 
-      ;¿pretende colarme un distrito del obispo?
+      ;Â¿pretende colarme un distrito del obispo?
       if ( %owner2 == $gettok($line(@spersonajes,$fline(@spersonajes,5 $+ $chr(32) $+ *,1)) ,3,32) ) { sciudadelas.msg $1 E 174 }
       else {
 
@@ -940,17 +940,17 @@ alias sciudadelas.procesa {
 
               var %dif = $calc(%precio2 - %precio1)
 
-              ;tiene la víctima muralla construida?
+              ;tiene la vÃ­ctima muralla construida?
               if ( $maravillas(%owner2,0,63) ) { inc %dif }
 
-              ;el distrito objetivo está ornamentado?
+              ;el distrito objetivo estÃ¡ ornamentado?
               if ($gettok(%carta2,4,32) == 2) { inc %dif }
 
               var %ndiplomatico = $fline(@sjugadores,%n $+ $chr(32) $+ *,1) , %diplomatico = $line(@sjugadores, %ndiplomatico)
               var %nvictima = $fline(@sjugadores,%owner2 $+ $chr(32) $+ *,1) , %victima = $line(@sjugadores, %nvictima)
 
 
-              ;si el distrito nuevo es más caro, que pague la diferencia
+              ;si el distrito nuevo es mÃ¡s caro, que pague la diferencia
               if (%dif > 0) {
                 var %dinero = $gettok(%diplomatico,4,32) , %vdinero = $gettok(%victima,4,32)
                 if (%dif > %dinero) { sciudadelas.msg $1 E 175 }
@@ -963,7 +963,7 @@ alias sciudadelas.procesa {
                   rline @sdistritos %nc2 $puttok(%carta2,%owner1,6,32)
 
 
-                  ;incrementamos coste si la víctima tiene construida la muralla
+                  ;incrementamos coste si la vÃ­ctima tiene construida la muralla
                   if ( $maravillas(%owner2,0,63) ) { inc %dif }
 
                   sciudadelas.msg sciudadelasC* DP %owner1 %owner2 $3-
@@ -1008,7 +1008,7 @@ alias sciudadelas.procesa {
 
   if ($2 == L) {
 
-    ;usan el Laboratorio para descartar una carta y cobrar una moneda de oro, ¡ruines!
+    ;usan el Laboratorio para descartar una carta y cobrar una moneda de oro, Â¡ruines!
 
     ;comprobamos que tiene construido el laboratorio
     if ( !$maravillas(%n,0,69) ) { sciudadelas.msg $1 E 76 }
@@ -1050,20 +1050,20 @@ alias sciudadelas.procesa {
 
   if ($2 == PD) {
 
-    ;destruir distrito con powderhouse (polvorín)
+    ;destruir distrito con powderhouse (polvorÃ­n)
     var %owner = $gettok($line(@sdistritos, $fline(@sdistritos, $3 $+ $chr(32) $+ * ,1)),6,32)
 
     ;devolvemos al mazo cartas destruidas
     todeck $3
     todeck 76
 
-    ;si era el museo, devolvemos al mazo las cartas que están bajo él
+    ;si era el museo, devolvemos al mazo las cartas que estÃ¡n bajo Ã©l
     if ($3 == 78) { todeck_museo }
 
-    ;si era el campanario, dejamos las reglas de finalización de partida como estaban
+    ;si era el campanario, dejamos las reglas de finalizaciÃ³n de partida como estaban
     if ($3 == 79) { unset %sciudadelas.v.tb }
 
-    ;si alguno de los jugadores había entrado en la lista de los bonos por cerrar, le sacamos
+    ;si alguno de los jugadores habÃ­a entrado en la lista de los bonos por cerrar, le sacamos
     set %sciudadelas.v.ocho = $remtok(%sciudadelas.v.ocho,%owner,1,32)
     set %sciudadelas.v.ocho = $remtok(%sciudadelas.v.ocho,%n,1,32)
 
@@ -1081,11 +1081,11 @@ alias sciudadelas.procesa {
 
   if ($2 == KD) {
 
-    ;si el distrito es el Torreón, no puede ser destruido
+    ;si el distrito es el TorreÃ³n, no puede ser destruido
     if ($3 == 59) { sciudadelas.msg $1 E 15 }
     else {
 
-      ;comprobamos que la víctima no es el obispo -vivo- o la Bruja con el poder del mismo, ¡atentos al cristo padre!
+      ;comprobamos que la vÃ­ctima no es el obispo -vivo- o la Bruja con el poder del mismo, Â¡atentos al cristo padre!
 
       var %ncarta = $fline(@sdistritos, $3 $+ $chr(32) $+ *,1) , %carta = $line(@sdistritos, %ncarta )
       var %j = $gettok( %carta ,6,32)
@@ -1094,14 +1094,14 @@ alias sciudadelas.procesa {
       if ((%j != %obispo) || ( (%j == %obispo) && (%sciudadelas.v.embrujado == 5) )) {
         if  ( ( %j != %bruja )  || ( ( %j == %bruja ) && ( %sciudadelas.v.embrujado != 5 ) ) ) {
 
-          ;¿podrá pagarlo?
+          ;Â¿podrÃ¡ pagarlo?
           var %coste = $gettok(%carta,3,32)
           dec %coste
 
-          ;tiene la víctima muralla construida?
+          ;tiene la vÃ­ctima muralla construida?
           if ( $maravillas(%j,0,63) ) { inc %coste }
 
-          ;el distrito objetivo está ornamentado?
+          ;el distrito objetivo estÃ¡ ornamentado?
           if ($gettok(%carta,4,32) == 2) { inc %coste }
 
           var %jcl = $fline(@sjugadores,%n $+ $chr(32) $+ *,1) , %jc = $line(@sjugadores,%jcl), %oro = $gettok(%jc,4,32)
@@ -1115,16 +1115,16 @@ alias sciudadelas.procesa {
               ;devolvemos la carta al mazo
               todeck $3
 
-              ;si era el museo, devolvemos al mazo las cartas que están bajo él
+              ;si era el museo, devolvemos al mazo las cartas que estÃ¡n bajo Ã©l
               if ($3 == 78) { todeck_museo }
 
-              ;si era el campanario, dejamos las reglas de finalización de partida como estaban
+              ;si era el campanario, dejamos las reglas de finalizaciÃ³n de partida como estaban
               if ($3 == 79) { unset %sciudadelas.v.tb }
 
-              ;recalculamos puntos y dinero, enviamos actualización y mensaje de distrito destruido a todos
+              ;recalculamos puntos y dinero, enviamos actualizaciÃ³n y mensaje de distrito destruido a todos
 
               oro %n - %coste
-              ;truco: sumo 0 oro a la víctima, así actualizo sus puntos
+              ;truco: sumo 0 oro a la vÃ­ctima, asÃ­ actualizo sus puntos
               oro %j +1-1
               status %n
               status %j
@@ -1154,8 +1154,8 @@ alias sciudadelas.procesa {
       ;le quitamos una moneda
       oro %n -1
 
-      ;en servidor controlamos el "ornamento" en el mismo campo que la construcción,
-      ;de modo que una carta construida tiene "1" en ese campo y si está ornamentada
+      ;en servidor controlamos el "ornamento" en el mismo campo que la construcciÃ³n,
+      ;de modo que una carta construida tiene "1" en ese campo y si estÃ¡ ornamentada
       ;tiene un "2"
 
       ;ornamentamos el distrito
@@ -1174,7 +1174,7 @@ alias sciudadelas.procesa {
 
   if ( $2 == CY ) {
 
-    ;alguien usa el cementerio para recuperar la última carta destruida pagando una moneda de oro
+    ;alguien usa el cementerio para recuperar la Ãºltima carta destruida pagando una moneda de oro
 
     ;comprobamos que el jugador tiene construido el cementerio
     if ( $maravillas(%n,0,66) ) {
@@ -1182,7 +1182,7 @@ alias sciudadelas.procesa {
       ;comprobamos que tiene una moneda de oro
       if ( $oro(%n) ) {
 
-        ;le asignamos en servidor la última carta destruida
+        ;le asignamos en servidor la Ãºltima carta destruida
         var %nc = $fline(@sdistritos, %sciudadelas.v.destruida $+ $chr(32) $+ *,1) , %carta = $line(@sdistritos,%nc)
         var %carta = $puttok(%carta,%n,6,32)
 
@@ -1229,10 +1229,10 @@ alias sciudadelas.procesa {
     ;cambio de mano de un jugador con la de otro
     else {
 
-      ;hacemos lista de cartas en la mano del jugador víctima y del jugador mago
+      ;hacemos lista de cartas en la mano del jugador vÃ­ctima y del jugador mago
       var %c = 0 , %totalv = $fline(@sdistritos, * $+ $chr(32) $+ $3,0) , %totalm = $fline(@sdistritos, * $+ $chr(32) $+ %n,0)
 
-      ;lista de cartas de la víctima en %cartasv
+      ;lista de cartas de la vÃ­ctima en %cartasv
       while (%c < %totalv) {
         inc %c 
         var %carta = $line(@sdistritos, $fline(@sdistritos, * $+ $chr(32) $+ $3,%c) )
@@ -1247,7 +1247,7 @@ alias sciudadelas.procesa {
         if ( !$gettok(%carta,4,32) ) { var %cartasm = $addtok(%cartasm, $gettok(%carta,1,32) ,32) }
       }
 
-      ;pasamos al mago las cartas de la lista de la víctima
+      ;pasamos al mago las cartas de la lista de la vÃ­ctima
       var %c = 0 , %total1 = $numtok(%cartasv,32)
       while (%c < %total1) {
         inc %c
@@ -1257,7 +1257,7 @@ alias sciudadelas.procesa {
 
       }
 
-      ;pasamos a la víctima las cartas de la lista del mago
+      ;pasamos a la vÃ­ctima las cartas de la lista del mago
       var %c = 0 , %total2 = $numtok(%cartasm,32)
       while (%c < %total2) {
         inc %c
@@ -1266,8 +1266,8 @@ alias sciudadelas.procesa {
         rline @sdistritos %ncarta %carta
       }
 
-      ;actualizamos número de cartas en la info del server sobre los jugadores
-      ;para actualizar correctamente, le restamos a cada uno las que tenía y luego le sumamos las del otro
+      ;actualizamos nÃºmero de cartas en la info del server sobre los jugadores
+      ;para actualizar correctamente, le restamos a cada uno las que tenÃ­a y luego le sumamos las del otro
       cartas %n - %total2 + %total1
       cartas $3 - %total1 + %total2
 
@@ -1302,7 +1302,7 @@ alias sciudadelas.procesa {
 
   if ($2 == B) {
 
-    ;comprobamos que el jugador tiene la carta (muy paranoico, sí, pero la peña está muy loca)
+    ;comprobamos que el jugador tiene la carta (muy paranoico, sÃ­, pero la peÃ±a estÃ¡ muy loca)
     var %nc = $fline(@sdistritos, $3 $+ $chr(32) $+ * ,1) , %carta = $line(@sdistritos,%nc)
     var %owner = $gettok(%carta,6,32)
     if ( %owner != %n ) { sciudadelas.msg $1 E 82 }
@@ -1315,7 +1315,7 @@ alias sciudadelas.procesa {
         ;comprobamos que puede pagarla
         var %precio = $gettok( %carta ,3,32 )
 
-        ;modificamos precio si tiene manufactura (id 77) construida y está construyendo una maravilla (campo 5 en @sdistritos)
+        ;modificamos precio si tiene manufactura (id 77) construida y estÃ¡ construyendo una maravilla (campo 5 en @sdistritos)
         if ( ($maravillas(%n,0,77)) && (!$gettok(%carta,5,32)) ) { dec %precio }
 
         if (%precio > $oro(%n) ) { sciudadelas.msg $1 E 27 }
@@ -1330,20 +1330,20 @@ alias sciudadelas.procesa {
             oro %n - %precio
           }
 
-          ;si es su 8º (o 7º con faro) distrito, le apuntamos en la lista
+          ;si es su 8Âº (o 7Âº con faro) distrito, le apuntamos en la lista
           if  ( $distritos_construidos(%n) == $calc(8 - %sciudadelas.v.tb) ) { %sciudadelas.v.ocho = $addtok(%sciudadelas.v.ocho,%n,32) }
 
           ;quitamos la carta de su mano y actualizamos
           cartas %n -1
 
-          ;informamos a todos de la construcción
+          ;informamos a todos de la construcciÃ³n
           sciudadelas.msg sciudadelasC* B %n $3 
 
-          ;es importante avisar antes de la construcción que actualizar, pues el cliente
-          ;usa la actualización para reactivar botones...
+          ;es importante avisar antes de la construcciÃ³n que actualizar, pues el cliente
+          ;usa la actualizaciÃ³n para reactivar botones...
           status %n
 
-          ;recordamos última carta construida, para pagar al Recaudador
+          ;recordamos Ãºltima carta construida, para pagar al Recaudador
           ;si el que construye NO es el jugador que lo tiene, claro
           if ( $gettok($line(@spersonajes,$fline(@spersonajes,11 $+ $chr(32) $+ *,1)) ,3,32) != %n ) { 
             %sciudadelas.v.construida = %n $3 
@@ -1360,7 +1360,7 @@ alias sciudadelas.procesa {
   }
 
   if ($2 == TB) {
-    ;usa el campanario, la partida terminará con 7 distritos salvo que el mismo sea destruido
+    ;usa el campanario, la partida terminarÃ¡ con 7 distritos salvo que el mismo sea destruido
     sciudadelas.msg sciudadelasC* TB %n
     %sciudadelas.v.tb = 1
     return
@@ -1373,7 +1373,7 @@ alias sciudadelas.procesa {
     unset %sciudadelas.v.balroom
 
     ;si tiene construida la poorhouse y no tiene pelas, le damos una moneda de oro.
-    ;No tengo claro si esto debería ir aquí o tras haber comprobado recaudador, no veo nada en las FAQ.
+    ;No tengo claro si esto deberÃ­a ir aquÃ­ o tras haber comprobado recaudador, no veo nada en las FAQ.
     if ( $maravillas(%n,0,74) && ($oro(%n) == 0) ) {
 
       oro %n +1
@@ -1400,7 +1400,7 @@ alias sciudadelas.procesa {
       else { var %jugadorreina = %n }
 
       var %corona = $corona
-      ;si el tio que tiene la corona está muerto la reina cobrará al acabar el turno
+      ;si el tio que tiene la corona estÃ¡ muerto la reina cobrarÃ¡ al acabar el turno
       ;osea, AHORA
       var %ncorona = $fline(@sjugadores,%corona $+ $chr(32) $+ *,1)
       var %muerto = $gettok($line(@spersonajes, %ncorona) ,3,32)
@@ -1408,9 +1408,9 @@ alias sciudadelas.procesa {
 
         var %nprevio = $calc(%ncorona - 1) , %nsiguiente = $calc(%ncorona + 1)
 
-        ;si nprevio vale 0, le damos el valor de la última línea (nuestro registro no es circular, la mesa sí)
+        ;si nprevio vale 0, le damos el valor de la Ãºltima lÃ­nea (nuestro registro no es circular, la mesa sÃ­)
         if ( %nprevio == 0 ) { var %nprevio = $line(@sjugadores,0) }
-        ;si nsiguiente vale más que jugadores existentes, le damos valor 1
+        ;si nsiguiente vale mÃ¡s que jugadores existentes, le damos valor 1
         if ( %nsiguiente > $line(@sjugadores,0) ) { var %nsiguiente = 1 }
 
         var %nreina = $fline(@sjugadores,%jugadorreina $+ $chr(32) $+ *,1)
@@ -1426,8 +1426,8 @@ alias sciudadelas.procesa {
       }
     }
 
-    ;si el jugador ha construido, tiene dinero, el RECAUDADOR está vivo y en juego y no es el propio jugador,
-    ;tendrá que pagarle una monedita al funcionario de la Agencia Tributaria...
+    ;si el jugador ha construido, tiene dinero, el RECAUDADOR estÃ¡ vivo y en juego y no es el propio jugador,
+    ;tendrÃ¡ que pagarle una monedita al funcionario de la Agencia Tributaria...
 
     var %lrecaudador = $line(@spersonajes,$fline(@spersonajes,11 $+ $chr(32) $+ *,1))
     if (%lrecaudador) {
@@ -1460,7 +1460,7 @@ alias sciudadelas.procesa {
 
     ;antes de informar de fin de turno, miramos a ver si el que ha jugado era el embrujado
     ;en cuyo caso, no enviamos fin de turno, sino inicio de semiturno de bruja...
-    ;si era el embrujado, ¡miramos a ver si el ET lo envia él o la bruja!
+    ;si era el embrujado, Â¡miramos a ver si el ET lo envia Ã©l o la bruja!
     if ( ($3 == %sciudadelas.v.embrujado) && ( %n != %sciudadelas.v.bruja ) ) {
 
       sciudadelas.msge $damesocket(%sciudadelas.v.bruja) STB $3 %sciudadelas.v.bruja
@@ -1471,17 +1471,17 @@ alias sciudadelas.procesa {
 
       sciudadelas.msg sciudadelasC* ET $3
 
-      ;si ha jugado el "último de la lista", entonces iniciamos nueva ronda de selección de personajes
-      ;previa comprobación de distritos construidos, ¡no vaya a ser que la partida haya acabado!
-      ;nótese que, si el último personaje está descartado, debemos subir en la
-      ;lista hasta encontrar al personaje que realmente ha jugado el último, eso lo hace $ultimo
+      ;si ha jugado el "Ãºltimo de la lista", entonces iniciamos nueva ronda de selecciÃ³n de personajes
+      ;previa comprobaciÃ³n de distritos construidos, Â¡no vaya a ser que la partida haya acabado!
+      ;nÃ³tese que, si el Ãºltimo personaje estÃ¡ descartado, debemos subir en la
+      ;lista hasta encontrar al personaje que realmente ha jugado el Ãºltimo, eso lo hace $ultimo
 
       if ($3 == $ultimo) {
 
         var %ganador = $elige_ganador
         if (%ganador) { 
 
-          ;se acabó la partida
+          ;se acabÃ³ la partida
 
           ;borramos variables temporales del servidor
           unset %sciudadelas.v.*
@@ -1496,7 +1496,7 @@ alias sciudadelas.procesa {
           unset %sciudadelas.v.bruja 
           unset %sciudadelas.v.embrujado
 
-          ;también limpiamos variable del recaudador...
+          ;tambiÃ©n limpiamos variable del recaudador...
           unset %sciudadelas.v.construida
 
           elige_personaje
@@ -1508,7 +1508,7 @@ alias sciudadelas.procesa {
 
         var %p = $3
 
-        ;ahora tengo que averiguar en qué línea está, incrementar el valor de la línea y sacar el nuevo personaje
+        ;ahora tengo que averiguar en quÃ© lÃ­nea estÃ¡, incrementar el valor de la lÃ­nea y sacar el nuevo personaje
 
         var %c = $fline(@spersonajes, $3 $+ $chr(32) $+ * ,1)
         inc %c
@@ -1525,14 +1525,14 @@ alias sciudadelas.procesa {
   if ($2 == DD) {
 
     ;partida entre 2 jugadores, eligen descarte
-    ;comprobamos que se trata de una carta libre (no vayan a pisar la elección del contrario)
+    ;comprobamos que se trata de una carta libre (no vayan a pisar la elecciÃ³n del contrario)
 
     var %npersonaje = $fline(@spersonajes, $3 $+ $chr(32) $+ *,1), %personaje = $line(@spersonajes, %npersonaje)
     var %estado = $gettok(%personaje,3,32)
 
     if (%estado == L) { 
 
-      ;descartamos personaje, informamos de descarte y seguimos ronda de elección
+      ;descartamos personaje, informamos de descarte y seguimos ronda de elecciÃ³n
       rline @spersonajes %npersonaje $puttok(%personaje,DD,3,32)
       sciudadelas.msg sciudadelasC* DD
 
@@ -1544,12 +1544,12 @@ alias sciudadelas.procesa {
 
   }
 
-  ;si llegamos aquí, el cliente no sabe lo que está escribiendo
-  ;¿deberíamos desconectarle?
+  ;si llegamos aquÃ­, el cliente no sabe lo que estÃ¡ escribiendo
+  ;Â¿deberÃ­amos desconectarle?
 
 }
 
-;$ultimo -> devuelve el número del último jugador no descartado o asesinado que hay en el juego
+;$ultimo -> devuelve el nÃºmero del Ãºltimo jugador no descartado o asesinado que hay en el juego
 alias ultimo {
 
   var %l = $line(@spersonajes,0) 
@@ -1571,14 +1571,14 @@ alias ultimo {
 
 alias elige_personaje {
 
-  ;si el rey está muerto, este es el momento de asignarle la corona que no ha podido recibir en su turno
+  ;si el rey estÃ¡ muerto, este es el momento de asignarle la corona que no ha podido recibir en su turno
   var %rey_linea = $line( @spersonajes , $fline(@spersonajes,4 $+ $chr(32) $+ *,1) )
   if ($gettok(%rey_linea,3,32) == K) { corona $gettok(%rey_linea,4,32) }
 
   ;Obtenemos corona
   var %corona = $corona
 
-  ;enviamos mensaje de turno nuevo, el parámetro es la nueva corona
+  ;enviamos mensaje de turno nuevo, el parÃ¡metro es la nueva corona
   sciudadelas.msg sciudadelasC* NT %corona
 
   ;dejamos personajes a 0 para volver a repartirlos
@@ -1588,7 +1588,7 @@ alias elige_personaje {
   descarta_bocarriba
   descarta_bocabajo
 
-  ;mensaje de selección de personaje al jugador con la corona y vuelta a empezar :D
+  ;mensaje de selecciÃ³n de personaje al jugador con la corona y vuelta a empezar :D
   var %s = $damesocket(%corona)
 
   sciudadelas.msg %s P %corona $personajes
@@ -1596,7 +1596,7 @@ alias elige_personaje {
 
 }
 
-;juega_personaje <numeropersonaje> envía orden de juego o mensaje según el personaje pueda jugar o no,
+;juega_personaje <numeropersonaje> envÃ­a orden de juego o mensaje segÃºn el personaje pueda jugar o no,
 ;si no puede jugar, pasa al siguiente. Cuando llega al final invoca elige_personaje.
 ;De paso hace la trasferencia de dinero del robado al ladron, paga al mercader, al abad y gestiona parte de la reina.
 alias juega_personaje {
@@ -1619,13 +1619,13 @@ alias juega_personaje {
         if ( $maravillas(%r,0,73)) {
           var %s = $damesocket(%r)
 
-          ;memorizamos quién está jugando, por si el tio desconecta en su puto turno
+          ;memorizamos quiÃ©n estÃ¡ jugando, por si el tio desconecta en su puto turno
           ;y tenemos que ser conscientes de ello para saltar al siguiente
           %sciudadelas.v.turno = %p %r
 
           sciudadelas.msge %s STD %p %r
-          ;el parámetro con valor "3" es el que el cliente usa normalmente
-          ;para saber si está en el primer o segundo semiturno de la bruja
+          ;el parÃ¡metro con valor "3" es el que el cliente usa normalmente
+          ;para saber si estÃ¡ en el primer o segundo semiturno de la bruja
           ;le doy el valor "3" para evitar confusiones...
           sciudadelas.msg %s STD %p %r 3
           return
@@ -1642,9 +1642,9 @@ alias juega_personaje {
 
           if (%r) { 
 
-            ;si han robado al personaje, averiguo quién y modifico tesoro de jugador ladrón y jugador víctima
+            ;si han robado al personaje, averiguo quiÃ©n y modifico tesoro de jugador ladrÃ³n y jugador vÃ­ctima
 
-            ;se ha usado la habilidad del ladrón para robar a otro EMBRUJANDO al ladrón?
+            ;se ha usado la habilidad del ladrÃ³n para robar a otro EMBRUJANDO al ladrÃ³n?
             if (%sciudadelas.v.embrujado == 2) { var %ladron = %sciudadelas.v.bruja }
             else { var %ladron = $gettok( $line(@spersonajes,2) ,3,32) }
 
@@ -1668,7 +1668,7 @@ alias juega_personaje {
 
           }
 
-          ;si es la Reina, miramos a ver quién es la Corona y si está vivo
+          ;si es la Reina, miramos a ver quiÃ©n es la Corona y si estÃ¡ vivo
           if (%p == 9) {
 
             ;fue EMBRUJADA la Reina?
@@ -1676,7 +1676,7 @@ alias juega_personaje {
             else { var %jugadorreina = %j }
 
             var %corona = $corona
-            ;si el tio que tiene la corona está muerto, la reina sólo cobrará al acabar el turno, y eso no lo miramos aquí :)
+            ;si el tio que tiene la corona estÃ¡ muerto, la reina sÃ³lo cobrarÃ¡ al acabar el turno, y eso no lo miramos aquÃ­ :)
             ;sino en la zona de ET
             var %ncorona = $fline(@sjugadores,%corona $+ $chr(32) $+ *,1)
             var %muerto = $gettok($line(@spersonajes, %ncorona) ,3,32)
@@ -1684,9 +1684,9 @@ alias juega_personaje {
 
               var %nprevio = $calc(%ncorona - 1) , %nsiguiente = $calc(%ncorona + 1)
 
-              ;si nprevio vale 0, le damos el valor de la última línea (nuestro registro no es circular, la mesa sí)
+              ;si nprevio vale 0, le damos el valor de la Ãºltima lÃ­nea (nuestro registro no es circular, la mesa sÃ­)
               if ( %nprevio == 0 ) { var %nprevio = $line(@sjugadores,0) }
-              ;si nsiguiente vale más que jugadores existentes, le damos valor 1
+              ;si nsiguiente vale mÃ¡s que jugadores existentes, le damos valor 1
               if ( %nsiguiente > $line(@sjugadores,0) ) { var %nsiguiente = 1 }
 
               var %nreina = $fline(@sjugadores,%jugadorreina $+ $chr(32) $+ *,1)
@@ -1703,7 +1703,7 @@ alias juega_personaje {
 
           }
 
-          ;el más rico paga una moneda al Abad
+          ;el mÃ¡s rico paga una moneda al Abad
           if (%p == 14) {
 
             ;fue EMBRUJADO el Abad?
@@ -1741,7 +1741,7 @@ alias juega_personaje {
 
             if ( (%deudor) && (%deudor != %jugadorabad) ) {
 
-              ;restamos 1 a víctima, sumamos uno a abad, actualizamos info e informamos
+              ;restamos 1 a vÃ­ctima, sumamos uno a abad, actualizamos info e informamos
               oro %jugadorabad +1
               oro %deudor -1
               status %jugadorabad
@@ -1755,7 +1755,7 @@ alias juega_personaje {
 
           var %s = $damesocket(%j)
 
-          ;memorizamos quién está jugando, por si el tio desconecta en su puto turno
+          ;memorizamos quiÃ©n estÃ¡ jugando, por si el tio desconecta en su puto turno
           ;y tenemos que ser conscientes de ello para saltar al siguiente
           %sciudadelas.v.turno = %p %j
 
@@ -1772,11 +1772,11 @@ alias juega_personaje {
   if (%c > $numtok(%sciudadelas.f.personajes,32) ) {
 
     ;elige_personaje 
-    ;no podía ser la cosa tan sencilla...
+    ;no podÃ­a ser la cosa tan sencilla...
 
     var %ganador = $elige_ganador
     if (%ganador) { 
-      ;se acabó la partida
+      ;se acabÃ³ la partida
 
       ;borramos variables temporales del servidor
       unset %sciudadelas.v.*
@@ -1790,7 +1790,7 @@ alias juega_personaje {
       unset %sciudadelas.v.bruja 
       unset %sciudadelas.v.embrujado
 
-      ;también limpiamos variable del recaudador...
+      ;tambiÃ©n limpiamos variable del recaudador...
       unset %sciudadelas.v.construida
 
       elige_personaje
@@ -1830,10 +1830,10 @@ alias calcula_puntos {
       ;tesoro imperial -> suma oro a puntos totales
       if (%id == 60) { inc %puntosjugador $oro($1) }
 
-      ;universidad y puerta dragón -> cada uno suma +2 al final además de su precio de construcción
+      ;universidad y puerta dragÃ³n -> cada uno suma +2 al final ademÃ¡s de su precio de construcciÃ³n
       if ( (%id == 65) || (%id == 71) ) { inc %puntosjugador 2 }
 
-      ;fuente de los deseos -> +1 por cada maravilla de más que tengas (sin incluir la fuente)
+      ;fuente de los deseos -> +1 por cada maravilla de mÃ¡s que tengas (sin incluir la fuente)
       var %maravillas = $maravillas($1)
       if (%id == 70) { inc %puntosjugador $calc( %maravillas - 1 ) }
 
@@ -1855,7 +1855,7 @@ alias calcula_puntos {
 
   if ($numtok(%colores,32) == 5) { inc %puntosjugador 3 }
 
-  ;si tiene 8 distritos recibirá 4 ó 2 puntos, dependiendo de si fue el primero en construirlos o no
+  ;si tiene 8 distritos recibirÃ¡ 4 Ã³ 2 puntos, dependiendo de si fue el primero en construirlos o no
   if ( $distritos_construidos($1) == $calc(8 - %sciudadelas.v.tb) ) {
 
     if ( $gettok(%sciudadelas.v.ocho ,1,32) == $1 ) { inc %puntosjugador 4 }
@@ -1867,7 +1867,7 @@ alias calcula_puntos {
 
 }
 
-;$maravillas(jugador) -> devuelve número de maravillas construidas
+;$maravillas(jugador) -> devuelve nÃºmero de maravillas construidas
 ;si se pasa segundo argumento, devuelve la maravilla que ocupa ese puesto.
 ;un tio con 3 maravillas: $maravillas(jugador) -> 3 ; $maravillas(jugador,2) -> id de la segunda maravilla construida
 ;si pasamos como tercer argumento el id de una maravilla, nos devuelve 1 si el jugador ha construido esa maravilla:
@@ -1888,7 +1888,7 @@ alias maravillas {
 
     if ((%color == 0) && (%construida)) { inc %maravillas }
 
-    ;esto, obviamente, no está dando lo que debería dar
+    ;esto, obviamente, no estÃ¡ dando lo que deberÃ­a dar
     if ($2 == %c) { return $gettok(%carta,1,32) }
 
     if ($3 == %id) {
@@ -1904,7 +1904,7 @@ alias maravillas {
 
 }
 
-;$construida(jugador,nombrecarta) -> $construida(jugador,tienda) devolverá 1 si el jugador tiene una tienda construida.
+;$construida(jugador,nombrecarta) -> $construida(jugador,tienda) devolverÃ¡ 1 si el jugador tiene una tienda construida.
 alias construida {
 
   ;recorremos todos los distritos y paramos cuando encontremos uno con el nombre dado
@@ -1923,12 +1923,12 @@ alias construida {
 
 }
 
-;cobra_distritos <jugador> <personaje>: apunta al jugador el oro correspondiente en función de su personaje y distritos construidos
+;cobra_distritos <jugador> <personaje>: apunta al jugador el oro correspondiente en funciÃ³n de su personaje y distritos construidos
 alias cobra_distritos {
 
   var %personaje = $2
 
-  ;navegamos a través de todos los distritos en poder del personaje
+  ;navegamos a travÃ©s de todos los distritos en poder del personaje
   var %c = 0 , %total = $fline(@sdistritos,* $+ $chr(32) $+ $1,0), %cobrar = 0
 
   while (%c < %total) {
@@ -1937,10 +1937,10 @@ alias cobra_distritos {
 
     var %distrito = $line( @sdistritos, $fline(@sdistritos, * $+ $chr(32) $+ $1 ,%c) )
 
-    ;¿da oro al personaje en cuestión el distrito?
+    ;Â¿da oro al personaje en cuestiÃ³n el distrito?
     if ( $gettok(%distrito,5,32) == $2 ) {
 
-      ;¿está construido?
+      ;Â¿estÃ¡ construido?
       if ( $gettok(%distrito,4,32) ) {
         inc %cobrar
       }
@@ -1949,7 +1949,7 @@ alias cobra_distritos {
 
   }
 
-  ;si está construida la escuela de magia, cobra una moneda más
+  ;si estÃ¡ construida la escuela de magia, cobra una moneda mÃ¡s
   if ( $maravillas($1,0,64) ) { inc %cobrar }
 
   if (%cobrar) {
@@ -1963,7 +1963,7 @@ alias cobra_distritos {
 
 }
 
-;$distritos_construidos(jugador) -> devuelve número de distritos construidos
+;$distritos_construidos(jugador) -> devuelve nÃºmero de distritos construidos
 alias distritos_construidos {
 
   var %c = 0, %total = $fline(@sdistritos, * $+ $chr(32) $+ $1,0)
@@ -1986,7 +1986,7 @@ alias distritos_construidos {
 
 }
 
-;$elige_ganador -> devuelve el nombre del tio con más puntos (y los puntos) si alguno de los jugadores tiene 8 distritos construidos
+;$elige_ganador -> devuelve el nombre del tio con mÃ¡s puntos (y los puntos) si alguno de los jugadores tiene 8 distritos construidos
 alias elige_ganador {
 
   var %c = 0 , %total = $line(@sjugadores,0) , %puntosganador = 0
@@ -2064,7 +2064,7 @@ on 1:dialog:personajes:init:0: {
 
 }
 
-;al cerrar, averiguamos qué personajes están activados
+;al cerrar, averiguamos quÃ© personajes estÃ¡n activados
 on 1:dialog:personajes:close:0:{
 
   var %c = 0
@@ -2119,7 +2119,7 @@ on 1:dialog:jugar:sclick:*:{
 }
 
 ;oro pepito +3 -> suma 3 monedas a pepito
-;$oro(pepito) -> nos devuelve el número de monedas de pepito
+;$oro(pepito) -> nos devuelve el nÃºmero de monedas de pepito
 alias oro {
   if (!$2) { return $edita_personaje($1,4) }
   else {
@@ -2128,7 +2128,7 @@ alias oro {
 }
 
 ;cartas pepito +3 -> suma 3 cartas a pepito
-;$cartas(pepito) -> nos devuelve el número de cartas de pepito
+;$cartas(pepito) -> nos devuelve el nÃºmero de cartas de pepito
 alias cartas {
   if (!$2) { return $edita_personaje($1,3) }
   else {
@@ -2136,8 +2136,8 @@ alias cartas {
   }
 }
 
-;edita_personaje <nombrejugador> <campo> <modificación> -> actualiza oro de un jugador
-;función genérica para obtener el valor de un campo de un personaje o modificarlo
+;edita_personaje <nombrejugador> <campo> <modificaciÃ³n> -> actualiza oro de un jugador
+;funciÃ³n genÃ©rica para obtener el valor de un campo de un personaje o modificarlo
 ;campos: 3->cartas 4->oro
 alias edita_personaje {
 
@@ -2173,19 +2173,19 @@ alias status {
 }
 
 ;lista_mazo -> devuelve un listado de los ids disponibles en el mazo
-;esta función es para la maravilla del Faro
+;esta funciÃ³n es para la maravilla del Faro
 
 alias lista_mazo {
 
-  ;obtengo número de cartas asignadas a M (mazo)
+  ;obtengo nÃºmero de cartas asignadas a M (mazo)
   var %x = 0 , %total = $fline(@sdistritos,* $+ M,0), %cartas = "", %tipos = ""
   while (%x < %total) {
 
     inc %x
     var %carta = $line(@sdistritos, $fline(@sdistritos,* $+ M,%x) )
 
-    ;no tiene mucha utilidad enviar cartas repetidas (pej. 3 tiendas y cosas así),
-    ;enviamos el primer id que encontremos para cada tipo de carta y el número 
+    ;no tiene mucha utilidad enviar cartas repetidas (pej. 3 tiendas y cosas asÃ­),
+    ;enviamos el primer id que encontremos para cada tipo de carta y el nÃºmero 
     ;de cartas iguales que hay en el mazo
 
     var %tipo = $gettok(%carta,2,32)
@@ -2200,7 +2200,7 @@ alias lista_mazo {
       ;pej. si el primer id de tienda en el mazo
       ;barajado es 12 y hay 4 tiendas, tendremos 12:4
 
-      ;La anotación se hace sólo la primera vez que se repite el tipo.
+      ;La anotaciÃ³n se hace sÃ³lo la primera vez que se repite el tipo.
       ;Averiguamos primer id libre con ese tipo y luego lo buscamos en %cartas
       ;si no lo encontramos, tiene que ser porque ya le hemos pegado la info, paramos.
 
@@ -2220,7 +2220,7 @@ alias lista_mazo {
 }
 
 ;todeck_museo -> devuelve al mazo todas las cartas que estuvieran en el museo
-;llamamos esta función cuando destruyen el museo
+;llamamos esta funciÃ³n cuando destruyen el museo
 alias todeck_museo {
 
   while ( $fline(@sdistritos, * $+ $chr(32) $+ MU ,1) ) {
