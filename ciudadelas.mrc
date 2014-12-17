@@ -1,5 +1,5 @@
 ;Ciudadelas cliente
-;GNU 2004 kat@fiade.com
+;GPL 2004 kat@fiade.com
 
 ;control de versiones
 alias cversion { return beta3  }
