@@ -1,8 +1,8 @@
 ;Ciudadelas cliente
-;GPL 2004 kat@fiade.com
+;GNU 2004 kat@fiade.com
 
 ;control de versiones
-alias cversion { return beta3  }
+alias cversion { return beta4  }
 
 on 1:start:{
 
@@ -12,9 +12,9 @@ on 1:start:{
   window -hl @mensajes
   loadbuf @mensajes ciudadelas/ $+ %cciudadelas.f.msgs
 
-  echo -s mCiudadelas $cversion 12kat@fiade.com
+  echo -s mCitadels $cversion 12kat@fiade.com
 
-  titlebar Ciudadelas
+  titlebar mCitadels
 
   carga_datos
 
@@ -1078,6 +1078,8 @@ alias dibuja_personajes {
   ;guardo en una variable el primer parámetro para saber qué tipo de elección hago
   ;cuando pulse sobre la carta y poder así contestar adecuadamente
 
+  //echo dentro de dibuja_personajes: $1-
+  %cciudadelas.v.dibuja_personajes = $1
   var %parm = $2-
 
   ;si estamos eligiendo a quien matar o robar, presentamos Personajes sin los descartados bocarriba y sin el asesino
@@ -1163,13 +1165,17 @@ menu @* {
 
   sclick: { 
 
+    //echo activa: $active personajes: $ventana(personajes)
+
     if ($ventana(personajes) == $active) {
 
       var %id = $sel_carta_personajes($mouse.x, $mouse.y) 
+      //echo id %id
+      //echo dibuja_personajes %cciudadelas.v.dibuja_personajes
       if ( %id ) {
 
         ;elección para jugar
-        if ( %cciudadelas.v.dibuja_personajes == 1 ) {
+        if ( %cciudadelas.v.dibuja_personajes < 2 ) {
 
           sockwrite -n cciudadelas P %id
           unset %cciudadelas.v.dibuja_personajes
@@ -1675,7 +1681,7 @@ on 1:close:@chat: {
 ;D  -> muerto con hospital, sólo dibujamos botones de coger dinero y cartas
 
 alias dibuja_botones {
-
+  //echo dibuja_botones primer $1-
   if ( (!$2) || ($2 == D) ) {
 
     ;botones comunes a todos los personajes
@@ -1684,9 +1690,12 @@ alias dibuja_botones {
 
   }
 
-  if ( ( ( %cciudadelas.v.embrujado == $1 ) && (!$2) ) || ($2 == D) ) { ;no le dibujamos botones de habilidades especiales }
+  if ( ( ( %cciudadelas.v.embrujado == $1 ) && (!$2) ) || ($2 == D) ) {
+    ;no le dibujamos botones de habilidades especiales 
+    //echo dibuja_botones embrujado
+  }
   else {
-
+    //echo dibuja_botones segundo $1-
     if ($1 == 1) { dibuja_boton K $texto(34) }
     if ($1 == 2) { dibuja_boton R $texto(35) }
     if ($1 == 3) { dibuja_boton C $texto(36) }
@@ -1745,6 +1754,7 @@ alias dibuja_botones {
     dibuja_boton MU $texto(228)
   }
 
+  //echo dibuja_botones final
   dibuja_boton ET $texto(41)
 
 }
@@ -2018,7 +2028,7 @@ alias cciudadelas.procesa {
   if ( $1 == GD ) { msg $texto(44,$2-) }
 
   if ( $1 == DC ) {
-
+    %cciudadelas.v.descartar = $2-
     drawrect -rdf $ventana(mano) 11595006 1 820 25 130 210 30 30
     drawtext $ventana(mano) 1 arial 18 837 30  $texto(45)
     encuadra $ventana(mano) 833 65 120 12 arial 12 $texto(46)
@@ -2616,7 +2626,7 @@ menu @* {
 }
 
 dialog -l jugar {
-  title mCiudadelas $cversion
+  title mCitadels $cversion
   size -1 -1 136 120
   option dbu
   link $texto(256) , 8, 24 104 83 8
@@ -2844,3 +2854,4 @@ alias cuadradito {
     drawtext $ventana(mazo) 1 arial 20 929 28 %numero
   }
 }
+
