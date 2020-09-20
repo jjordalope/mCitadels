@@ -1,5 +1,5 @@
 ;Ciudadelas servidor
-;GPL 2004 kat@fiade.com
+;GNU 2004 kat@fiade.com
 
 on 1:exit: { unset %sciudadelas.v.* }
 
@@ -658,6 +658,28 @@ alias sciudadelas.procesa {
   if ($2 == P) {
     asigna_personaje %n $3
     return
+  }
+
+  if ($2 == DD) {
+
+    ;partida entre 2 jugadores, eligen descarte
+    ;comprobamos que se trata de una carta libre (no vayan a pisar la elección del contrario)
+
+    var %npersonaje = $fline(@spersonajes, $3 $+ $chr(32) $+ *,1), %personaje = $line(@spersonajes, %npersonaje)
+    var %estado = $gettok(%personaje,3,32)
+
+    if (%estado == L) { 
+
+      ;descartamos personaje, informamos de descarte y seguimos ronda de elección
+      rline @spersonajes %npersonaje $puttok(%personaje,DD,3,32)
+      sciudadelas.msg sciudadelasC* DD
+
+      asigna_personaje %n $3 1
+
+    }
+    else { sciudadelas.msg $1 MDD $personajes }
+    return
+
   }
 
   ;maravilla bal room -> si el tio no ha dado las gracias e intenta hacer algo, pierde turno
@@ -1518,28 +1540,6 @@ alias sciudadelas.procesa {
 
       }
     }
-    return
-
-  }
-
-  if ($2 == DD) {
-
-    ;partida entre 2 jugadores, eligen descarte
-    ;comprobamos que se trata de una carta libre (no vayan a pisar la elección del contrario)
-
-    var %npersonaje = $fline(@spersonajes, $3 $+ $chr(32) $+ *,1), %personaje = $line(@spersonajes, %npersonaje)
-    var %estado = $gettok(%personaje,3,32)
-
-    if (%estado == L) { 
-
-      ;descartamos personaje, informamos de descarte y seguimos ronda de elección
-      rline @spersonajes %npersonaje $puttok(%personaje,DD,3,32)
-      sciudadelas.msg sciudadelasC* DD
-
-      asigna_personaje %n $3 1
-
-    }
-    else { sciudadelas.msg $1 MDD $personajes }
     return
 
   }
