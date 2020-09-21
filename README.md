@@ -13,6 +13,6 @@ English, Spanish and French languajes supported.
 
 Citadels is a Card Game created by Bruno Faiduti (http://faidutti.com/).
 
-The game's pictures were created by Julien Delval, Florence Magnin, Jean-Louis Mourier and Didier Graffet. The game is distributed in Spain by Millennium (http://www.millenniumdist.com/) and the official page is located at: http://www.edgeent.com/juegos/coleccion/ciudadelas.
+The game's pictures were created by Julien Delval, Florence Magnin, Jean-Louis Mourier and Didier Graffet.
 
 The mirc script code is GPL. mIRC itself is shareware and the pictures are copyright and do not belong to me.
